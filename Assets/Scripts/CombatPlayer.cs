@@ -42,7 +42,7 @@ public class CombatPlayer : MonoBehaviour {
 			anim.Play ("punch");
 			//anim.SetBool("punch", true);
 			if(GetComponent<MovePlayer>().faceRight == other.gameObject.GetComponent<MovePlayer>().faceRight){
-				other.gameObject.GetComponent<MovePlayer> ().flip ();
+				other.gameObject.GetComponent<MovePlayer> ().Flip ();
 			}
 
 			other.gameObject.GetComponent<Animator> ().Play ("caindo");

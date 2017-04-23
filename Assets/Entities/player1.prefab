@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1099942698008306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.425, y: 1.3674197, z: 0}
+  m_LocalPosition: {x: -1.535, y: -0.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4323784452238648}
@@ -180,23 +180,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcbe6c47ad05f74c97517ed16b33acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rd2: {fileID: 50617989028635118}
   maxSpeed: 3
   moveForce: 250
   jumpForce: 500
   dashForce: 5000
+  dashDelay: 0.1
   estaNoSolo: 1
   canDoubleJump: 1
+  canDash: 1
+  isAlive: 1
+  faceRight: 0
+  wallCheck: 0
+  wallSliding: 0
+  wallCheckPoint: {fileID: 4381958947498870}
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
   testSolo: {fileID: 4323784452238648}
+  rd2: {fileID: 50617989028635118}
+  anim: {fileID: 95865785718167742}
+  id: 1
   horizontalCtrl: Horizontal_P1
   jump: Jump_P1
-  canDash: 1
   dash: Dash_P1
-  dashDelay: 0.1
-  anim: {fileID: 95865785718167742}
-  isAlive: 1
-  id: 1
-  faceRight: 0
 --- !u!114 &114221069097773416
 MonoBehaviour:
   m_ObjectHideFlags: 1
