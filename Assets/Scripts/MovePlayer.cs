@@ -122,6 +122,8 @@ public class MovePlayer : MonoBehaviour {
 		if(Input.GetButtonDown(jump)){
 			if(faceRight){
 				rd2.AddForce(new Vector2(5,1) * jumpForce);
+				print("FLIPOU");
+				Flip();
 			}
 			else{
 				rd2.AddForce(new Vector2(-5,1) * jumpForce);
@@ -131,6 +133,7 @@ public class MovePlayer : MonoBehaviour {
 
 	public void Flip(){
 		faceRight = !faceRight;
+		print("FLIPO2222U");
 
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
