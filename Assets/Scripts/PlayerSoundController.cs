@@ -9,12 +9,12 @@ public class PlayerSoundController : MonoBehaviour {
 	public AudioClip PlayerDying;
 	public AudioClip Push;
 	public AudioClip ToTheGround;
-	public AudioClip Jump1;
-	public AudioClip Jump2;
+	public AudioClip jump;
+	public AudioClip doubleJump;
 	public AudioClip NaoPodePular;
 
 	public void playJumpSound(){
-		AudioSource.PlayClipAtPoint(Jump1, transform.position);
+		AudioSource.PlayClipAtPoint(jump, transform.position);
 	}
 
 }

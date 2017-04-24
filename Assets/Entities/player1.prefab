@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114221069097773416}
   - component: {fileID: 95865785718167742}
   - component: {fileID: 61805212178714792}
+  - component: {fileID: 114859482069317294}
   m_Layer: 8
   m_Name: player1
   m_TagString: Player
@@ -221,6 +222,25 @@ MonoBehaviour:
   canAttack: 1
   maxSpeed: 5
   anim: {fileID: 95865785718167742}
+--- !u!114 &114859482069317294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099942698008306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be30053f59264fc45bdd5585c8a2cb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dash: {fileID: 8300000, guid: 27a26d9a000bd7f48b97e5b55c67cbc7, type: 3}
+  LandingJump: {fileID: 8300000, guid: 60d652988f12ad0498a167291e67699f, type: 3}
+  PlayerDying: {fileID: 8300000, guid: 9bf108521688ca64bb9ee336360d1b54, type: 3}
+  Push: {fileID: 8300000, guid: 352d309873df739449889a76dcbdc024, type: 3}
+  ToTheGround: {fileID: 8300000, guid: 0ee930261a594234785ab457d072884e, type: 3}
+  jump: {fileID: 8300000, guid: d78397af000eb5d439cf4b94e8a1190c, type: 3}
+  doubleJump: {fileID: 8300000, guid: c8b27164f07862245876e712457f0a71, type: 3}
+  NaoPodePular: {fileID: 8300000, guid: 7ea0fc3ed0d6254418fb8797169b0e51, type: 3}
 --- !u!212 &212007214635926218
 SpriteRenderer:
   m_ObjectHideFlags: 1

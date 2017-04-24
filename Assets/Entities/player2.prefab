@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 114635972643348138}
   - component: {fileID: 95432435883854806}
   - component: {fileID: 61576818104525656}
+  - component: {fileID: 114547640478005800}
   m_Layer: 8
   m_Name: player2
   m_TagString: Player
@@ -180,23 +181,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcbe6c47ad05f74c97517ed16b33acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rd2: {fileID: 50633482162315432}
   maxSpeed: 3
   moveForce: 250
   jumpForce: 500
   dashForce: 5000
+  dashDelay: 0.1
   estaNoSolo: 1
   canDoubleJump: 1
+  canDash: 1
+  isAlive: 1
+  faceRight: 0
+  wallCheck: 0
+  wallSliding: 0
+  wallCheckPoint: {fileID: 0}
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   testSolo: {fileID: 4987266418767188}
+  rd2: {fileID: 50633482162315432}
+  anim: {fileID: 95432435883854806}
+  id: 2
   horizontalCtrl: Horizontal_P2
   jump: Jump_P2
-  canDash: 1
   dash: Dash_P2
-  dashDelay: 0.1
-  anim: {fileID: 95432435883854806}
-  isAlive: 1
-  id: 2
-  faceRight: 0
+--- !u!114 &114547640478005800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941220624238960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be30053f59264fc45bdd5585c8a2cb4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dash: {fileID: 8300000, guid: 27a26d9a000bd7f48b97e5b55c67cbc7, type: 3}
+  LandingJump: {fileID: 8300000, guid: 60d652988f12ad0498a167291e67699f, type: 3}
+  PlayerDying: {fileID: 8300000, guid: 9bf108521688ca64bb9ee336360d1b54, type: 3}
+  Push: {fileID: 8300000, guid: 352d309873df739449889a76dcbdc024, type: 3}
+  ToTheGround: {fileID: 8300000, guid: 0ee930261a594234785ab457d072884e, type: 3}
+  jump: {fileID: 8300000, guid: d78397af000eb5d439cf4b94e8a1190c, type: 3}
+  doubleJump: {fileID: 8300000, guid: c8b27164f07862245876e712457f0a71, type: 3}
+  NaoPodePular: {fileID: 8300000, guid: d78397af000eb5d439cf4b94e8a1190c, type: 3}
 --- !u!114 &114635972643348138
 MonoBehaviour:
   m_ObjectHideFlags: 1
