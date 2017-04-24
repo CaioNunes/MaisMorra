@@ -58,13 +58,13 @@ public class MovePlayer : MonoBehaviour {
 
 		if (Input.GetButtonDown (jump)) {
 			if (estaNoSolo) {
-				//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump1, transform.position);
+				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
 				canDoubleJump = true;
 			} else {
 				if (canDoubleJump) {
-					//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump2, transform.position);
+					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().doubleJump, transform.position);
 
 					canDoubleJump = false;
 					rd2.velocity = new Vector2(rd2.velocity.x, 0);
@@ -78,7 +78,7 @@ public class MovePlayer : MonoBehaviour {
 		if (Input.GetButtonDown (dash)) {
 
 				if (canDash) {
-					//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
+					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
 					if (faceRight) {
 						anim.Play ("dash");
 						rd2.AddForce (new Vector2 (-dashForce, 0));
@@ -110,7 +110,7 @@ public class MovePlayer : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other){
 		if (other.gameObject.tag == "Death") {
-			//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().PlayerDying, transform.position);
+			AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().PlayerDying, transform.position);
 			isAlive = false;
 			gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		}
