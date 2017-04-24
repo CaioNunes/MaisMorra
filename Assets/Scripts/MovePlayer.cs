@@ -61,13 +61,13 @@ public class MovePlayer : MonoBehaviour {
 		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Water"));  
 		if (Input.GetButtonDown (jump) && !wallSliding) {
 			if (estaNoSolo) {
-				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump1, transform.position);
+				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
 				canDoubleJump = true;
 			} else {
 				if (canDoubleJump) {
-					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump2, transform.position);
+					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().doubleJump, transform.position);
 
 					canDoubleJump = false;
 					rd2.velocity = new Vector2(rd2.velocity.x, 0);
