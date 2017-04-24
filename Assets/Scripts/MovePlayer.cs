@@ -117,15 +117,15 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	public void HandleWallSliding(){
-		rd2.velocity = new Vector2(rd2.velocity.x, -1.5f);
+		rd2.velocity = new Vector2(rd2.velocity.x, -3f);
 
 		if(Input.GetButtonDown(jump)){
 			if(faceRight){
-				rd2.AddForce(new Vector2(5,1) * jumpForce);
-				print("FLIPOU");
 				Flip();
+				rd2.AddForce(new Vector2(5,1) * jumpForce);
 			}
 			else{
+				Flip();
 				rd2.AddForce(new Vector2(-5,1) * jumpForce);
 			}
 		}
@@ -133,8 +133,6 @@ public class MovePlayer : MonoBehaviour {
 
 	public void Flip(){
 		faceRight = !faceRight;
-		print("FLIPO2222U");
-
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;

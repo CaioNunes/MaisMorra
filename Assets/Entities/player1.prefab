@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 95865785718167742}
   - component: {fileID: 61805212178714792}
   - component: {fileID: 114859482069317294}
-  - component: {fileID: 96246125219126528}
+  - component: {fileID: 96530953661396610}
   m_Layer: 8
   m_Name: player1
   m_TagString: Player
@@ -171,7 +171,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!96 &96246125219126528
+--- !u!96 &96530953661396610
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -301,7 +301,7 @@ MonoBehaviour:
   maxSpeed: 3
   moveForce: 250
   jumpForce: 500
-  dashForce: 5000
+  dashForce: 1000
   dashDelay: 0.1
   estaNoSolo: 1
   canDoubleJump: 1
