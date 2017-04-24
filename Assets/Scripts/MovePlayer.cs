@@ -18,6 +18,7 @@ public class MovePlayer : MonoBehaviour {
 	public bool faceRight = true;
 	public bool wallCheck;
 	public bool wallSliding;
+	//private bool dashTrail;
 
 	public Transform wallCheckPoint;
 	public LayerMask wallLayerMask;
@@ -36,6 +37,8 @@ public class MovePlayer : MonoBehaviour {
 	void Start () {
 		rd2 = GetComponent<Rigidbody2D> ();	
 		anim = GetComponent<Animator> ();
+		//dashTrail = GetComponent<TrailRenderer>();
+
 	}
 	 
 	void Update () {
@@ -92,6 +95,7 @@ public class MovePlayer : MonoBehaviour {
 		// =================== Dash =========================
 		if (Input.GetButtonDown (dash)) {
 			if (canDash) {
+				//dashTrail.enabled = true;
 				//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
 				if (faceRight) {
 					anim.Play ("dash");
@@ -103,6 +107,7 @@ public class MovePlayer : MonoBehaviour {
 					//canDash = false;
 				}
 			}
+			//dashTrail = false;
 		}
 		dashDelay += Time.deltaTime;
 		if (dashDelay > 2) {
