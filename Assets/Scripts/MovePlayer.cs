@@ -42,6 +42,7 @@ public class MovePlayer : MonoBehaviour {
 	}
 	 
 	void Update () {
+		
 		/// =========================== Movimentação ===============================
 		float moveHorizontal = Input.GetAxis (horizontalCtrl);
 		anim.SetFloat("move", Mathf.Abs(moveHorizontal));
@@ -60,17 +61,19 @@ public class MovePlayer : MonoBehaviour {
 		if(Mathf.Abs(rd2.velocity.x) > maxSpeed)
 			rd2.velocity = new Vector2(Mathf.Sign(rd2.velocity.x) * maxSpeed, rd2.velocity.y);
 
+
 		/// =========================== Pulo ================================
 		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Water"));  
+
 		if (Input.GetButtonDown (jump) && !wallSliding) {
 			if (estaNoSolo) {
-				//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump1, transform.position);
+				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
 				canDoubleJump = true;
 			} else {
 				if (canDoubleJump) {
-					//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Jump2, transform.position);
+					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().doubleJump, transform.position);
 
 					canDoubleJump = false;
 					rd2.velocity = new Vector2(rd2.velocity.x, 0);
@@ -78,6 +81,7 @@ public class MovePlayer : MonoBehaviour {
 				}
 			}
 		}
+
 
 		// =================== Wall Jump =========================
 		if(!estaNoSolo){
@@ -96,8 +100,7 @@ public class MovePlayer : MonoBehaviour {
 		// =================== Dash =========================
 		if (Input.GetButtonDown (dash)) {
 			if (canDash) {
-				//dashTrail.enabled = true;
-				//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
+				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
 				if (faceRight) {
 					anim.Play ("dash");
 					rd2.AddForce (new Vector2 (-dashForce, 0));
@@ -108,8 +111,8 @@ public class MovePlayer : MonoBehaviour {
 					//canDash = false;
 				}
 			}
-			//dashTrail = false;
 		}
+
 		dashDelay += Time.deltaTime;
 		if (dashDelay > 2) {
 			canDash = true;
@@ -147,7 +150,3 @@ public class MovePlayer : MonoBehaviour {
 		}
 	}
 }
-
-
-
-						rd2.AddForce (new Vector2 (-dashForce, 0));
