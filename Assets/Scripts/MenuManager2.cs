@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager2 : MonoBehaviour {
 
 	public float count = 0f;
+	public string p1;
+	public string p2;
 
 	// Use this for initialization
 	void Start () {
@@ -19,4 +21,5 @@ public class MenuManager2 : MonoBehaviour {
 		if(count >= 2)
 			SceneManager.LoadScene ("Start");
 	}
+
 }

@@ -330,3 +330,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   count: 0
+  p1: Jump_P1
+  p2: Jump_P2

@@ -29,6 +29,9 @@ public class SceneControlador : MonoBehaviour {
 			foreach (MovePlayer player in players) {
 				count++;
 				if (player.isAlive == true) {
+					foreach(MovePlayer p in players){
+						p.GetComponent<SpriteRenderer> ().enabled = false;
+					}
 					if (player.id == 1) {
 						SceneManager.LoadScene ("Win1");
 					} else {
