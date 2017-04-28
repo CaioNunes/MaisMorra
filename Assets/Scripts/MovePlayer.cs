@@ -104,11 +104,11 @@ public class MovePlayer : MonoBehaviour {
 				if (faceRight) {
 					anim.Play ("dash");
 					rd2.AddForce (new Vector2 (-dashForce, 0));
-					//canDash = false;
+					canDash = false;
 				} else {
 					anim.Play ("dash");
 					rd2.AddForce (new Vector2 (dashForce, 0));
-					//canDash = false;
+					canDash = false;
 				}
 			}
 		}

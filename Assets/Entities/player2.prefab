@@ -184,7 +184,7 @@ MonoBehaviour:
   maxSpeed: 3
   moveForce: 250
   jumpForce: 500
-  dashForce: 5000
+  dashForce: 1000
   dashDelay: 0.1
   estaNoSolo: 1
   canDoubleJump: 1
