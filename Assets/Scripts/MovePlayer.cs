@@ -85,6 +85,7 @@ public class MovePlayer : MonoBehaviour {
 
 			if(wallCheck){
 				wallSliding = true;
+				canDoubleJump = true;
 				HandleWallSliding();
 			}
 		}
