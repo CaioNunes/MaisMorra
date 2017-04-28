@@ -21,7 +21,7 @@ public class BornPlayers : MonoBehaviour {
 		if (players[0].isOnGame == true) {
 		//	switch (players[0].id) {
 		//	case 1:
-				Instantiate (prefab1, new Vector2 (-1.24f, 0f), Quaternion.identity);
+				Instantiate (prefab1, new Vector2 (-2.18f, -0.31f), Quaternion.identity);
 				//Azul
 		//		break;
 
@@ -40,7 +40,7 @@ public class BornPlayers : MonoBehaviour {
 		//		break;
 
 		//	case 2:
-			Instantiate (prefab2, new Vector2 (2.69f, 0f), Quaternion.identity);
+			Instantiate (prefab2, new Vector2 (1.77f, -0.31f), Quaternion.identity);
 				//Laranja
 		//		break;
 		//	}
