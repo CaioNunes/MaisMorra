@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChoosedPlayer : MonoBehaviour {
 
 	public int id = 1;
-	public bool isOnGame = false;
+	public static bool[] isOnGame;
 
 	public string select;
 	public string moveLeft;
 	public string moveRight;
 	public string deselect;
+	public string StartGame;
 
 	public GameObject colorMaster;
 	public GameObject grays;
@@ -18,9 +20,13 @@ public class ChoosedPlayer : MonoBehaviour {
 	private SpriteRenderer[] colors;
 
 	private bool canSelect = true;
-	private int index = 0;
+	public static int index = 0;
 
 	void Start () {
+		DontDestroyOnLoad (colorMaster);
+		DontDestroyOnLoad (grays);
+
+		isOnGame = new bool[grays.gameObject.transform.childCount];
 		//Inicializando e preenchendo o array de sprites cinzas
 		sprites = Initialize(sprites, grays);
 		sprites [0].enabled = true;
@@ -47,6 +53,10 @@ public class ChoosedPlayer : MonoBehaviour {
 			if (Input.GetButtonDown (deselect)) {
 				DeselectPlayer ();
 			}
+		}
+
+		if (Input.GetButtonDown (StartGame)) {
+			SceneManager.LoadScene ("Game");
 		}
 	}
 
@@ -93,11 +103,14 @@ public class ChoosedPlayer : MonoBehaviour {
 		sprites [index].enabled = false;
 		colors [index].enabled = true;
 		canSelect = false;
+		isOnGame [index] = true;
 	}
 
 	void DeselectPlayer(){
 		sprites [index].enabled = true;
 		colors [index].enabled = false;
 		canSelect = true;
+		isOnGame [index] = false;
 	}
+		
 }

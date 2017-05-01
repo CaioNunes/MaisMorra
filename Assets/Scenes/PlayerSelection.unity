@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 155524761}
   - component: {fileID: 155524760}
   - component: {fileID: 155524762}
+  - component: {fileID: 155524763}
   m_Layer: 0
   m_Name: LevelMananger
   m_TagString: Untagged
@@ -147,13 +148,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  isOnGame: 0
   select: Jump_P1
   moveLeft: Horizontal_P1
   moveRight: Horizontal_P2
   deselect: deselect
+  StartGame: Start_P1
   colorMaster: {fileID: 426891728}
   grays: {fileID: 1470627896}
+--- !u!114 &155524763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155524759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d9b2f288eaa4043bae51dfdcae3ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grays: {fileID: 1470627896}
+  colors: {fileID: 426891728}
 --- !u!1 &162731562
 GameObject:
   m_ObjectHideFlags: 0

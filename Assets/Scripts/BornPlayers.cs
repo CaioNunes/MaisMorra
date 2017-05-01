@@ -4,48 +4,28 @@ using UnityEngine;
 
 public class BornPlayers : MonoBehaviour {
 
-//	public GameObject p1v;
-//	public GameObject p2v;
-
-	ChoosedPlayer[] players;
-
-
 	public GameObject prefab1;
 	public GameObject prefab2;
+	public int index;
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log (ChoosedPlayer.index);
 
-		players = FindObjectsOfType<ChoosedPlayer> ();
-
-		if (players[0].isOnGame == true) {
-		//	switch (players[0].id) {
-		//	case 1:
-				Instantiate (prefab1, new Vector2 (-1.24f, 0f), Quaternion.identity);
-				//Azul
-		//		break;
-
-		//	case 2:
-		//		Instantiate (prefab2, new Vector2 (0 5), Quaternion.identity);
-				//Laranja
-		//		break;
-		//	}
+		for (int i = 0; i < ChoosedPlayer.isOnGame.Length; i++) {
+			if (ChoosedPlayer.isOnGame [i] == true) {
+				switch (ChoosedPlayer.index + 1) {
+				case 1:
+					Debug.Log ("Instanciou Mago");
+					Instantiate (prefab1, new Vector2 (-1.24f, 0f), Quaternion.identity);
+					break;
+				case 2:
+					Debug.Log ("Instanciou ovelha");
+					Instantiate (prefab2, new Vector2 (-1.24f, 0f), Quaternion.identity);
+					break;
+				}		
+			}
 		}
-
-		if (players[1].isOnGame == true) {
-		//	switch (players[1].id) {
-		//	case 1:
-		//		Instantiate (prefab1, new Vector2 (0, 0), Quaternion.identity);
-				//Azul
-		//		break;
-
-		//	case 2:
-			Instantiate (prefab2, new Vector2 (2.69f, 0f), Quaternion.identity);
-				//Laranja
-		//		break;
-		//	}
-		}
-
 	}
 	
 	// Update is called once per frame
