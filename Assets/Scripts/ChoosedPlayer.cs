@@ -56,6 +56,7 @@ public class ChoosedPlayer : MonoBehaviour {
 
 		if (Input.GetButtonDown (StartGame)) {
 			SceneManager.LoadScene ("Game");
+			colors [index].enabled = false;
 		}
 	}
 
