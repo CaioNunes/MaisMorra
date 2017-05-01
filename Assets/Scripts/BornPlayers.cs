@@ -10,8 +10,6 @@ public class BornPlayers : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (ChoosedPlayer.index);
-
 		for (int i = 0; i < ChoosedPlayer.isOnGame.Length; i++) {
 			if (ChoosedPlayer.isOnGame [i] == true) {
 				switch (ChoosedPlayer.index + 1) {

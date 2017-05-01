@@ -23,8 +23,7 @@ public class ChoosedPlayer : MonoBehaviour {
 	public static int index = 0;
 
 	void Start () {
-		DontDestroyOnLoad (colorMaster);
-		DontDestroyOnLoad (grays);
+		DontDestroyOnLoad (gameObject);
 
 		isOnGame = new bool[grays.gameObject.transform.childCount];
 		//Inicializando e preenchendo o array de sprites cinzas
