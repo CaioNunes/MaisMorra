@@ -328,6 +328,7 @@ MonoBehaviour:
   p1: {fileID: 1470627896}
   p2: {fileID: 2131876829}
   start: Start_P1
+  isSinglePlayer: 0
   haveOnePlayer: 1
   haveTwoPlayers: 0
 --- !u!1 &787115758
@@ -357,7 +358,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9d33839a7cd387d4ab8d5fd2b9d9a953, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
