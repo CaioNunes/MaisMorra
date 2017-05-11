@@ -16,14 +16,14 @@ public class PlatformController : MonoBehaviour {
 	public float maximum_posX = 9.5f;
 	private float y = -8f;
 
-	public float plataformSpeed = 5f;
+	public float plataformSpeed = 10f;
 	public float contador =0;
 
 	void Update () {
 
 		contador += Time.deltaTime;
-		Debug.Log("time contador = " + contador);
 		if (contador > 5) {
+			Debug.Log("SpeedUP = " + plataformSpeed);
 			plataformSpeed += 0.5f;
 			contador = 0;
 		}

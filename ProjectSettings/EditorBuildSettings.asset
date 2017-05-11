@@ -8,16 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
   - enabled: 1
-    path: Assets/Scenes/Loose.unity
+    path: Assets/Scenes/Options.unity
   - enabled: 1
-    path: Assets/Scenes/Win1.unity
+    path: Assets/Scenes/PlayerSelection.unity
+  - enabled: 1
+    path: Assets/Scenes/Loose.unity
   - enabled: 1
     path: Assets/Scenes/Game.unity
   - enabled: 1
     path: Assets/Scenes/Win2.unity
   - enabled: 1
+    path: Assets/Scenes/Win1.unity
+  - enabled: 1
+    path: Assets/Scenes/Tie.unity
+  - enabled: 1
     path: Assets/Scenes/teste.unity
-  - enabled: 1
-    path: Assets/Scenes/PlayerSelection.unity
-  - enabled: 1
-    path: Assets/Scenes/Options.unity

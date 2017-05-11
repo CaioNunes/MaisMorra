@@ -19,8 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4360507133352142}
-  - component: {fileID: 114138806022110548}
-  - component: {fileID: 114136507917752416}
   - component: {fileID: 114580090587643470}
   - component: {fileID: 82400633945478154}
   - component: {fileID: 81503477189493494}
@@ -132,38 +130,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114136507917752416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1721155661181974}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0c049299a2203447826f0744eeb65d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114138806022110548
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1721155661181974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e719b51303a2a3e469d3f5b8a4b72610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pp1: {fileID: 1603802025738472, guid: 7c8aaf636e69ede4ebd07ea3fdb8fe50, type: 2}
-  pp2: {fileID: 1875146434719924, guid: f672be6aebe89e74a847eeb3413e9ff6, type: 2}
-  pp3: {fileID: 1241658615232150, guid: 1855971acf3aa22448a0e60aaaa4a585, type: 2}
-  pp4: {fileID: 1753597287852460, guid: a9864aa6901a83d4f99f0e3bd5808bf9, type: 2}
-  delay: 0
-  delay_Instant: 0.25
-  minimium_posX: 0
-  maximum_posX: 0
-  plataformSpeed: 2
-  contador: 0
 --- !u!114 &114307368393782426
 MonoBehaviour:
   m_ObjectHideFlags: 1
