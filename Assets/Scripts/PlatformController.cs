@@ -19,27 +19,20 @@ public class PlatformController : MonoBehaviour {
 	public float plataformSpeed = 5f;
 	public float contador =0;
 
-	void Start(){
-	}
-
-	//do the movimentation
 	void Update () {
 
 		contador += Time.deltaTime;
-
-		if (contador > 10) {
-			plataformSpeed = plataformSpeed * 2;
-			delay_Instant = delay_Instant / 2;
-			Debug.Log (plataformSpeed);
+		Debug.Log("time contador = " + contador);
+		if (contador > 5) {
+			plataformSpeed += 0.5f;
 			contador = 0;
 		}
 			
-		float x = Random.Range (-9f, 9f);
+		float x = Random.Range (-8f, 8f);
 		delay += Time.deltaTime;
 
 		if (delay > delay_Instant) {
 			int value = Random.Range (1, 4);
-
 			switch (value) {
 			case 1:
 				Instantiate (pp1, new Vector2(x,y), Quaternion.identity);
@@ -53,14 +46,10 @@ public class PlatformController : MonoBehaviour {
 			case 4:
 				Instantiate (pp4, new Vector2(x,y), Quaternion.identity);
 				break;
-			
 			}
 
 			delay = 0;
-
 		}
-
-
 	}
 }
 	

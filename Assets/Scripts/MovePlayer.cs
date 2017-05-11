@@ -37,8 +37,6 @@ public class MovePlayer : MonoBehaviour {
 	void Start () {
 		rd2 = GetComponent<Rigidbody2D> ();	
 		anim = GetComponent<Animator> ();
-		//dashTrail = GetComponent<TrailRenderer>();
-
 	}
 	 
 	void Update () {

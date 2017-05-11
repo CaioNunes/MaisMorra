@@ -7,11 +7,6 @@ public class SceneControlador : MonoBehaviour {
 
 	private MovePlayer[] players;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		players = FindObjectsOfType<MovePlayer> ();
@@ -35,13 +30,9 @@ public class SceneControlador : MonoBehaviour {
 						SceneManager.LoadScene ("Win2");
 					}
 				}
-					
 				count++;
-
 			}
 		}
-
 		i = 0;
-
 	}
 }
