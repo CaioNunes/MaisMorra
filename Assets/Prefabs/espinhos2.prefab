@@ -114,14 +114,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573028938408042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.39, y: 6.09, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 10.9, y: -7.629999, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_Children:
   - {fileID: 4398904337434658}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4897406058315486
 Transform:
   m_ObjectHideFlags: 1
@@ -360,9 +360,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 809.9784, y: -14.985776}
+  m_Offset: {x: 809.9784, y: -22.50893}
   serializedVersion: 2
-  m_Size: {x: 1620.9547, y: 31.24398}
+  m_Size: {x: 1620.9547, y: 46.2903}
 --- !u!114 &114205252980141694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,8 +396,8 @@ MonoBehaviour:
   TileWidth: 30
   TileHeight: 30
   ExportScale: 1
-  MapWidthInPixels: 1620
-  MapHeightInPixels: 1020
+  MapWidthInPixels: 0
+  MapHeightInPixels: 0
   BackgroundColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
 --- !u!114 &114728510278324424
 MonoBehaviour:

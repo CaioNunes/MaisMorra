@@ -61,7 +61,7 @@ public class MovePlayer : MonoBehaviour {
 
 
 		/// =========================== Pulo ================================
-		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Water"));  
+		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));  
 
 		if (Input.GetButtonDown (jump) && !wallSliding) {
 			if (estaNoSolo) {
@@ -138,13 +138,5 @@ public class MovePlayer : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-	}
-
-	void OnCollisionEnter2D (Collision2D other){
-		if (other.gameObject.tag == "Death") {
-			//AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().PlayerDying, transform.position);
-			isAlive = false;
-			gameObject.GetComponent<SpriteRenderer>().enabled = false;
-		}
 	}
 }

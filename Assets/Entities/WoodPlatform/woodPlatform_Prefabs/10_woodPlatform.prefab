@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 251351166281166184}
   - component: {fileID: 114406054091862262}
   - component: {fileID: 61998725396526172}
-  m_Layer: 4
+  m_Layer: 9
   m_Name: 10_woodPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4347292719600362}
   - component: {fileID: 212252432792277566}
-  m_Layer: 4
+  m_Layer: 9
   m_Name: 2_wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1753597287852460}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4d8377ba92d13c743b3d0e00a4299970, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_Offset: {x: 0.28751326, y: 0}

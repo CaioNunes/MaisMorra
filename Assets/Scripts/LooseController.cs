@@ -9,15 +9,17 @@ public class LooseController : MonoBehaviour {
 	private int playerQuantitie;
 
 	void Start(){
-		players = FindObjectsOfType<MovePlayer>();
 	}
 
 	void Update(){
+		players = FindObjectsOfType<MovePlayer>();
 		playerQuantitie = players.Length;
 	}
 
 	void OnCollisionEnter2D(Collision2D colidedObject){
+
 		if(colidedObject.gameObject.tag == "Player"){
+			colidedObject.gameObject.GetComponent<MovePlayer>().isAlive = false;
 			Destroy(colidedObject.gameObject);
 			playerQuantitie--;
 		}
@@ -28,7 +30,6 @@ public class LooseController : MonoBehaviour {
 		if(playerQuantitie == 0){
 			SceneManager.LoadScene("Tie");
 		}
-
 		foreach (MovePlayer player in players) {
 			if (player.isAlive == true) {
 				switch(player.id){
