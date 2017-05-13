@@ -10,7 +10,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Options.unity
   - enabled: 1
-    path: Assets/Scenes/GameMode.unity
+    path: Assets/Scenes/GameModeSelection.unity
   - enabled: 1
     path: Assets/Scenes/SinglePlayerSelection.unity
   - enabled: 1
@@ -25,3 +25,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Tie.unity
   - enabled: 1
     path: Assets/Scenes/teste.unity
+  - enabled: 1
+    path: Assets/Scenes/PlayerSelection.unity
