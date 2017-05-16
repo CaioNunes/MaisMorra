@@ -16,7 +16,8 @@ public class HudController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		theScore++;
-		scoreText.text = "" + theScore;
+		if(theScore % 5 == 0)
+			scoreText.text = "" + theScore;
 	}
 
 	public int getScore(){

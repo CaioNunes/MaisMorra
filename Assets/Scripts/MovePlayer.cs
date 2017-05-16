@@ -18,7 +18,6 @@ public class MovePlayer : MonoBehaviour {
 	public bool faceRight = true;
 	public bool wallCheck;
 	public bool wallSliding;
-	//private bool dashTrail;
 
 	public Transform wallCheckPoint;
 	public LayerMask wallLayerMask;
@@ -40,46 +39,17 @@ public class MovePlayer : MonoBehaviour {
 	}
 	 
 	void Update () {
-		
 		/// =========================== Movimentação ===============================
-		float moveHorizontal = Input.GetAxis (horizontalCtrl);
-		anim.SetFloat("move", Mathf.Abs(moveHorizontal));
-
-		if (moveHorizontal < 0 && !faceRight) {
-			Flip ();
-
-		} else if (moveHorizontal > 0 && faceRight){
-			Flip ();
+		if(!wallSliding){
+			handleHorizontalMovimentation();
 		}
-			
-		if (moveHorizontal * rd2.velocity.x < maxSpeed) {
-			rd2.AddForce (Vector2.right * moveHorizontal * moveForce);
-		}
-
-		if(Mathf.Abs(rd2.velocity.x) > maxSpeed)
-			rd2.velocity = new Vector2(Mathf.Sign(rd2.velocity.x) * maxSpeed, rd2.velocity.y);
-
 
 		/// =========================== Pulo ================================
 		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));  
+		handleJumpMovimentation();
 
-		if (Input.GetButtonDown (jump) && !wallSliding) {
-			if (estaNoSolo) {
-				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
-				rd2.velocity = new Vector2(rd2.velocity.x, 0);
-				rd2.AddForce (new Vector2(0, jumpForce));
-				canDoubleJump = true;
-			} else {
-				if (canDoubleJump) {
-					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().doubleJump, transform.position);
-
-					canDoubleJump = false;
-					rd2.velocity = new Vector2(rd2.velocity.x, 0);
-					rd2.AddForce (new Vector2(0, jumpForce));
-				}
-			}
-		}
-
+		// =================== Dash =========================
+		handleDashMovimentation();
 
 		// =================== Wall Jump =========================
 		if(!estaNoSolo){
@@ -94,8 +64,51 @@ public class MovePlayer : MonoBehaviour {
 		if(!wallCheck || estaNoSolo){
 			wallSliding = false;
 		}
+	}
 
-		// =================== Dash =========================
+
+
+	//Handles Horizontal input and moves player
+	public void handleHorizontalMovimentation(){
+		float moveHorizontal = Input.GetAxis (horizontalCtrl);
+		anim.SetFloat("move", Mathf.Abs(moveHorizontal));
+
+		//TODO -> Refactor this ifs and use only one Flip() call
+		if (moveHorizontal < 0 && !faceRight) {
+			Flip ();
+		} 
+		else if (moveHorizontal > 0 && faceRight){
+			Flip ();
+		}
+
+		if (moveHorizontal * rd2.velocity.x < maxSpeed) {
+			rd2.AddForce (Vector2.right * moveHorizontal * moveForce);
+		}
+		if(Mathf.Abs(rd2.velocity.x) > maxSpeed)
+			rd2.velocity = new Vector2(Mathf.Sign(rd2.velocity.x) * maxSpeed, rd2.velocity.y);
+	}
+
+	// Handles Jump when input is received
+	public void handleJumpMovimentation(){
+		if (Input.GetButtonDown (jump) && !wallSliding) {
+			if (estaNoSolo) {
+				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
+				rd2.velocity = new Vector2(rd2.velocity.x, 0);
+				rd2.AddForce (new Vector2(0, jumpForce));
+				canDoubleJump = true;
+			} 
+			else {
+				if (canDoubleJump) {
+					AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().doubleJump, transform.position);
+					canDoubleJump = false;
+					rd2.velocity = new Vector2(rd2.velocity.x, 0);
+					rd2.AddForce (new Vector2(0, jumpForce));
+				}
+			}
+		}
+	}
+
+	public void handleDashMovimentation(){
 		if (Input.GetButtonDown (dash)) {
 			if (canDash) {
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
@@ -110,7 +123,6 @@ public class MovePlayer : MonoBehaviour {
 				}
 			}
 		}
-
 		dashDelay += Time.deltaTime;
 		if (dashDelay > 2) {
 			canDash = true;
@@ -118,6 +130,7 @@ public class MovePlayer : MonoBehaviour {
 		}
 	}
 
+	//Handles Wall Sliding and Wall Jumps
 	public void HandleWallSliding(){
 		rd2.velocity = new Vector2(rd2.velocity.x, -3f);
 
@@ -131,8 +144,10 @@ public class MovePlayer : MonoBehaviour {
 				rd2.AddForce(new Vector2(-5,1) * jumpForce);
 			}
 		}
+
 	}
 
+	//Flip player 
 	public void Flip(){
 		faceRight = !faceRight;
 		Vector3 theScale = transform.localScale;
