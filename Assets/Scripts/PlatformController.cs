@@ -24,10 +24,11 @@ public class PlatformController : MonoBehaviour {
 		contador += Time.deltaTime;
 		if (contador > 5) {
 			Debug.Log("SpeedUP = " + plataformSpeed);
+			if(plataformSpeed < 3)
 			plataformSpeed += 0.5f;
 			contador = 0;
 		}
-			
+
 		float x = Random.Range (-8f, 8f);
 		delay += Time.deltaTime;
 

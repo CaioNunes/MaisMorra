@@ -52,21 +52,8 @@ public class MovePlayer : MonoBehaviour {
 		handleDashMovimentation();
 
 		// =================== Wall Jump =========================
-		if(!estaNoSolo){
-			wallCheck = Physics2D.OverlapCircle(wallCheckPoint.position, 0.1f, wallLayerMask);
-
-			if(wallCheck){
-				wallSliding = true;
-				canDoubleJump = true;
-				HandleWallSliding();
-			}
-		}
-		if(!wallCheck || estaNoSolo){
-			wallSliding = false;
-		}
+		HandleWallSliding();
 	}
-
-
 
 	//Handles Horizontal input and moves player
 	public void handleHorizontalMovimentation(){
@@ -109,18 +96,17 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	public void handleDashMovimentation(){
-		if (Input.GetButtonDown (dash)) {
-			if (canDash) {
-				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
-				if (faceRight) {
-					anim.Play ("dash");
-					rd2.AddForce (new Vector2 (-dashForce, 0));
-					//canDash = false;
-				} else {
-					anim.Play ("dash");
-					rd2.AddForce (new Vector2 (dashForce, 0));
-					//canDash = false;
-				}
+	//TODO-> Constraint to check if dash is going to pass the edge of the map
+		if (Input.GetButtonDown (dash) && canDash) {
+			AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
+			if (faceRight) {
+				anim.Play ("dash");
+				rd2.AddForce (new Vector2 (-dashForce, 0));
+				//canDash = false;
+			} else {
+				anim.Play ("dash");
+				rd2.AddForce (new Vector2 (dashForce, 0));
+				//canDash = false;
 			}
 		}
 		dashDelay += Time.deltaTime;
@@ -132,19 +118,28 @@ public class MovePlayer : MonoBehaviour {
 
 	//Handles Wall Sliding and Wall Jumps
 	public void HandleWallSliding(){
-		rd2.velocity = new Vector2(rd2.velocity.x, -3f);
+		wallCheck = Physics2D.OverlapCircle(wallCheckPoint.position, 0.1f, wallLayerMask);
 
-		if(Input.GetButtonDown(jump)){
-			if(faceRight){
-				Flip();
-				rd2.AddForce(new Vector2(5,1) * jumpForce);
-			}
-			else{
-				Flip();
-				rd2.AddForce(new Vector2(-5,1) * jumpForce);
+		if(wallCheck && !estaNoSolo){
+			wallSliding = true;
+			canDoubleJump = true;
+
+			rd2.velocity = new Vector2(0, -3f);
+
+			if(Input.GetButtonDown(jump)){
+				if(!faceRight){
+					rd2.AddForce(new Vector2(-5,1) * jumpForce);
+					Flip();
+				}
+				else {
+					rd2.AddForce(new Vector2(5,1) * jumpForce);
+					Flip();
+				}
 			}
 		}
-
+		if(!wallCheck || estaNoSolo){
+			wallSliding = false;
+		}
 	}
 
 	//Flip player 
