@@ -7,23 +7,34 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Start.unity
+    guid: 28d35ad57b548f1419ac5a0e6f885691
   - enabled: 1
     path: Assets/Scenes/Options.unity
-  - enabled: 1
+    guid: e5749616d036bff47bfb8c4c2242e439
+  - enabled: 0
     path: Assets/Scenes/GameModeSelection.unity
-  - enabled: 1
+    guid: 6e02264fad329c4488a231a7d6f3e794
+  - enabled: 0
     path: Assets/Scenes/SinglePlayerSelection.unity
+    guid: cf4bd61f196eb954a831652910c1e904
   - enabled: 1
     path: Assets/Scenes/MultiPlayerSelection.unity
+    guid: defd08ef01739a54ba8a72f1a0016354
   - enabled: 1
     path: Assets/Scenes/Game.unity
+    guid: b78cd353fbf51e84cb548fd95a501ca8
   - enabled: 1
     path: Assets/Scenes/Win2.unity
+    guid: e42770b36e74fea4d89570292182f511
   - enabled: 1
     path: Assets/Scenes/Win1.unity
+    guid: 9f263a4b25a22b343acb701f9c137783
   - enabled: 1
     path: Assets/Scenes/Tie.unity
+    guid: fe7578238e4c0864b9f59657f60d09d6
   - enabled: 1
     path: Assets/Scenes/teste.unity
+    guid: fe79dcce0ceb0724587475c70d15a9a5
   - enabled: 1
     path: Assets/Scenes/PlayerSelection.unity
+    guid: 6a0db4cf028f7f54590db295d49cca37
