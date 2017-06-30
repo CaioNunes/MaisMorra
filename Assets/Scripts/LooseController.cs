@@ -6,41 +6,69 @@ using UnityEngine.SceneManagement;
 public class LooseController : MonoBehaviour {
 
 	private MovePlayer[] players;
-	private int playerQuantitie;
+    private TimerController timer;
+    private int lessDeath = 10000;
+    private List<int> playersTieId;
+    private bool deathmatch = false;
 
 	void Start(){
-	}
+        players = FindObjectsOfType<MovePlayer>();
+        timer = FindObjectOfType<TimerController>();
+    }
 
 	void Update(){
-		players = FindObjectsOfType<MovePlayer>();
-		playerQuantitie = players.Length;
+		
+        
 	}
 
 	void OnCollisionEnter2D(Collision2D colidedObject){
 
 		if(colidedObject.gameObject.tag == "Player"){
-			colidedObject.gameObject.GetComponent<MovePlayer>().isAlive = false;
-			Destroy(colidedObject.gameObject);
-			playerQuantitie--;
+            if (!deathmatch) {
+                colidedObject.gameObject.GetComponent<MovePlayer>().deaths++;
+            } else {
+                colidedObject.gameObject.GetComponent<MovePlayer>().isAlive = false;
+                colidedObject.gameObject.GetComponent<MovePlayer>().deaths++;
+                Destroy(colidedObject.gameObject);
+                changeSceneToWinner();
+            }   
 		}
-		changeSceneToWinner();
-	}
+
+        if (timer.end) {
+            changeSceneToWinner();
+        }
+            
+    }
 
 	void changeSceneToWinner(){
-		if(playerQuantitie == 0){
-			SceneManager.LoadScene("Tie");
-		}
-		foreach (MovePlayer player in players) {
-			if (player.isAlive == true) {
-				switch(player.id){
-					case 1:
-						SceneManager.LoadScene ("Win1");
-						break;
-					case 2:
-						SceneManager.LoadScene ("Win2");
-						break;
-				}
-			}
-		}
+
+        //Identifica menor quantidade de mortes
+        for (int i = 0; i<players.Length; i++){
+            if (players[i].deaths < lessDeath){
+                lessDeath = players[i].deaths;
+            }
+        }
+
+        //Adiciona na lista de empates todos que tiveram a menor quantidade de mortes
+        for(int i = 0; i < players.Length; i++){
+            if (players[i].deaths == lessDeath){
+                playersTieId.Add(players[i].id);
+            }
+        }
+
+        //Verifica se houve empate ou não, e define o estado baseado nisso.
+        if (playersTieId.Count == 1){
+            SceneManager.LoadScene("Win" + playersTieId);
+        } else {
+            deathmatch = true;
+            foreach (MovePlayer player in players) {
+                if (playersTieId.Contains(player.id)) {
+                    //Nothing to do
+                }
+                else{
+                    Destroy(player.gameObject);
+                }
+            }
+        }	
 	}
 }

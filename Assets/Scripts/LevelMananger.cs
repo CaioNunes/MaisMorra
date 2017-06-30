@@ -12,15 +12,5 @@ public class LevelMananger : MonoBehaviour {
 	public void Quit(){
 		Application.Quit ();
 	}
-	/*
-	TODO -> Juntar LevelMananger e SceneControlador in only one file
-
-	public void QuitRequest(){
-		Application.Quit();
-	}
 	
-	public void LoadNextLevel(){
-		Application.LoadLevel(Application.loadedLevel + 1);
-	}
-	*/
 }

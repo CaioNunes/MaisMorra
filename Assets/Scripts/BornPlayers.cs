@@ -19,36 +19,20 @@ public class BornPlayers : MonoBehaviour {
 		players = FindObjectsOfType<ChoosedPlayer> ();
 
 		if (players[0].isOnGame == true) {
-		//	switch (players[0].id) {
-		//	case 1:
+		
 				Instantiate (prefab1, new Vector2 (-3.43f, -2.7f), Quaternion.identity);
-				//Azul
-		//		break;
-
-		//	case 2:
-		//		Instantiate (prefab2, new Vector2 (0 5), Quaternion.identity);
-				//Laranja
-		//		break;
-		//	}
+		
 		}
 
 		if (players[1].isOnGame == true) {
-		//	switch (players[1].id) {
-		//	case 1:
-		//		Instantiate (prefab1, new Vector2 (0, 0), Quaternion.identity);
-				//Azul
-		//		break;
-
-		//	case 2:
+		
 			Instantiate (prefab2, new Vector2 (3.85f, -3.03f), Quaternion.identity);
-				//Laranja
-		//		break;
-		//	}
+		
 		}
 
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 		
 	}

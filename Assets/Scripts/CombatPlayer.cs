@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CombatPlayer : MonoBehaviour {
 
-	public string punch = "Punch_P1";
+	public string punch ;
 	public bool contact = false;
 	public GameObject testContact;
 	public float attackForce = 2000f;

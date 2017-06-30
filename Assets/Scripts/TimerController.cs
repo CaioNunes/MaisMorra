@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerController : MonoBehaviour {
 	private float seconds;
     private int minutes;
-    private bool end = false;
+    public bool end = false;
 	public Text scoreText;
 	
 

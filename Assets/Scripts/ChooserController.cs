@@ -9,7 +9,6 @@ public class ChooserController : MonoBehaviour {
 	public GameObject p2;
 
 	public string start;
-	public bool haveOnePlayer = false;
 	public bool haveTwoPlayers = false;
 	private 
 	// Use this for initialization
@@ -30,24 +29,11 @@ public class ChooserController : MonoBehaviour {
 			}
 		}
 
-		if (p1.GetComponent<ChoosedPlayer> ().isOnGame) {
-			haveOnePlayer = true;
-		}
 
 		if (p1.GetComponent<ChoosedPlayer> ().isOnGame && p2.GetComponent<ChoosedPlayer> ().isOnGame) {
-			haveOnePlayer = false;
 			haveTwoPlayers = true;
 		}
 			
-		//if (Input.GetButtonDown (start) && haveTwoPlayers) {
-		//	SceneManager.LoadScene ("Game");
-		//	p1.GetComponent<SpriteRenderer> ().enabled = false;
-		//	p2.GetComponent<SpriteRenderer> ().enabled = false;
-		//}
-	
-		//else {
-		//	p1.GetComponent<SpriteRenderer> ().enabled = true;
-		//	p2.GetComponent<SpriteRenderer> ().enabled = true;
-		//}
+		
 	}
 }

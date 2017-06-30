@@ -16,22 +16,19 @@ public class MovePlayer : MonoBehaviour {
 	public bool canDash = true;
 	public bool isAlive = true;
 	public bool faceRight = true;
-	public bool wallCheck;
-	public bool wallSliding;
-
-	public Transform wallCheckPoint;
-	public LayerMask wallLayerMask;
+	
 	public Transform testSolo;
 
 	//Definitions
 	public Rigidbody2D rd2;
 	public Animator anim;
 	public int id = 0;
+    public int deaths = 0;
 
 	//Strings & References
-	public string horizontalCtrl= "Horizontal_P1";
-	public string jump = "Jump_P1";
-	public string dash = "Dash_P1";
+	public string horizontalCtrl;
+	public string jump ;
+	public string dash ;
 
 	void Start () {
 		rd2 = GetComponent<Rigidbody2D> ();	
@@ -40,9 +37,6 @@ public class MovePlayer : MonoBehaviour {
 	 
 	void Update () {
 		/// =========================== Movimentação ===============================
-		if(!wallSliding){
-			handleHorizontalMovimentation();
-		}
 
 		/// =========================== Pulo ================================
 		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));  
@@ -50,9 +44,7 @@ public class MovePlayer : MonoBehaviour {
 
 		// =================== Dash =========================
 		handleDashMovimentation();
-
-		// =================== Wall Jump =========================
-		HandleWallSliding();
+		
 	}
 
 	//Handles Horizontal input and moves player
@@ -77,7 +69,7 @@ public class MovePlayer : MonoBehaviour {
 
 	// Handles Jump when input is received
 	public void handleJumpMovimentation(){
-		if (Input.GetButtonDown (jump) && !wallSliding) {
+		if (Input.GetButtonDown (jump)) {
 			if (estaNoSolo) {
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
@@ -115,32 +107,7 @@ public class MovePlayer : MonoBehaviour {
 			dashDelay = 0;
 		}
 	}
-
-	//Handles Wall Sliding and Wall Jumps
-	public void HandleWallSliding(){
-		wallCheck = Physics2D.OverlapCircle(wallCheckPoint.position, 0.1f, wallLayerMask);
-
-		if(wallCheck && !estaNoSolo){
-			wallSliding = true;
-			canDoubleJump = true;
-
-			rd2.velocity = new Vector2(0, -3f);
-
-			if(Input.GetButtonDown(jump)){
-				if(!faceRight){
-					rd2.AddForce(new Vector2(-5,1) * jumpForce);
-					Flip();
-				}
-				else {
-					rd2.AddForce(new Vector2(5,1) * jumpForce);
-					Flip();
-				}
-			}
-		}
-		if(!wallCheck || estaNoSolo){
-			wallSliding = false;
-		}
-	}
+	
 
 	//Flip player 
 	public void Flip(){
