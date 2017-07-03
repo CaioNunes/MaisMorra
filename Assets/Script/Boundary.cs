@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Boundary : MonoBehaviour {
 
-	void OnTriggerExit2D(Collider2D other)
-	{
-		Destroy(other.gameObject);
+	void OnTriggerExit2D(Collider2D other){
+		if(other.gameObject.tag != "Player")
+			Destroy(other.gameObject);
 	}
 
 }

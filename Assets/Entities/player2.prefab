@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 95432435883854806}
   - component: {fileID: 61576818104525656}
   - component: {fileID: 114547640478005800}
+  - component: {fileID: 114392644616354072}
   m_Layer: 8
   m_Name: player2
   m_TagString: Player
@@ -84,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1941220624238960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.85, y: -3.03, z: 0}
+  m_LocalPosition: {x: 4.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4987266418767188}
@@ -192,6 +193,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114392644616354072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1941220624238960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03e35b3adb88000478dde6c98c24d68e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 9, y: -5.5}
+  plataform_position: {x: 9, y: -6.7}
+  plataform: {fileID: 1910123850359460, guid: 004314971c946a04cafdf122ba0dc286, type: 2}
+  deathText: {fileID: 0}
 --- !u!114 &114430662052263064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,16 +229,11 @@ MonoBehaviour:
   canDash: 1
   isAlive: 1
   faceRight: 0
-  wallCheck: 0
-  wallSliding: 0
-  wallCheckPoint: {fileID: 4046866690248630}
-  wallLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
   testSolo: {fileID: 4987266418767188}
   rd2: {fileID: 50633482162315432}
   anim: {fileID: 95432435883854806}
   id: 2
+  deaths: 0
   horizontalCtrl: Horizontal_P2
   jump: Jump_P2
   dash: Dash_P2

@@ -9,7 +9,6 @@ public class MovePlayer : MonoBehaviour {
 	public float jumpForce = 1f;
 	public float dashForce = 1000f;
 	public float dashDelay = 0f;
-
 	// Booleans
 	public bool estaNoSolo;
 	public bool canDoubleJump = true;
@@ -40,10 +39,12 @@ public class MovePlayer : MonoBehaviour {
 
 		/// =========================== Pulo ================================
 		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));  
+		handleHorizontalMovimentation ();
 		handleJumpMovimentation();
 
 		// =================== Dash =========================
 		handleDashMovimentation();
+		//identifyLive ();
 		
 	}
 
@@ -71,6 +72,7 @@ public class MovePlayer : MonoBehaviour {
 	public void handleJumpMovimentation(){
 		if (Input.GetButtonDown (jump)) {
 			if (estaNoSolo) {
+				Debug.Log ("ESTOU PULANDO");
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
@@ -88,7 +90,6 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	public void handleDashMovimentation(){
-	//TODO-> Constraint to check if dash is going to pass the edge of the map
 		if (Input.GetButtonDown (dash) && canDash) {
 			AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
 			if (faceRight) {
@@ -107,7 +108,6 @@ public class MovePlayer : MonoBehaviour {
 			dashDelay = 0;
 		}
 	}
-	
 
 	//Flip player 
 	public void Flip(){
@@ -115,5 +115,15 @@ public class MovePlayer : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+		
+	void identifyLive(){
+		if (gameObject.transform.position.y <= 4)
+			isAlive = true;
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		if(col.gameObject.tag == "Death")
+			anim.Play ("Death");
 	}
 }

@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Options.unity
     guid: e5749616d036bff47bfb8c4c2242e439
   - enabled: 0
-    path: Assets/Scenes/GameModeSelection.unity
+    path: 
     guid: 6e02264fad329c4488a231a7d6f3e794
   - enabled: 0
-    path: Assets/Scenes/SinglePlayerSelection.unity
+    path: 
     guid: cf4bd61f196eb954a831652910c1e904
   - enabled: 1
     path: Assets/Scenes/MultiPlayerSelection.unity
