@@ -15,12 +15,13 @@ public class ChooserController : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (p1);
 		DontDestroyOnLoad (p2);
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (Input.GetButtonDown (start)) {
+        Debug.Log(p2.GetComponent<SpriteRenderer>().sprite.name);
+        if (Input.GetButtonDown (start)) {
 			if (haveTwoPlayers) {
 				
 				SceneManager.LoadScene ("Game");

@@ -12,15 +12,16 @@ public class TimerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		minutes = 3;
+		minutes = 1;
         seconds = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
 
-        if(minutes >= 0 && seconds >= 0){
-            if (seconds <= 0f){
+        if (minutes >= 0 && seconds >= 0f){
+            if ((int)seconds == 0f && minutes > 0){
                 minutes--;
                 seconds = 60f;
             }
@@ -34,6 +35,7 @@ public class TimerController : MonoBehaviour {
 
         }
         else{
+            scoreText.text = "Time Offer!!";
             end = true;
         }
 
