@@ -99,7 +99,7 @@ public class MovePlayer : MonoBehaviour {
 
 	public void handleDashMovimentation(){
 		dashDelay += Time.deltaTime;
-		if (dashDelay > 2) {
+		if (dashDelay > 1) {
 			canDash = true;
 			dashDelay = 0;
 		}
