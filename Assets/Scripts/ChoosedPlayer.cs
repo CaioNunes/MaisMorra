@@ -10,7 +10,8 @@ public class ChoosedPlayer : MonoBehaviour {
 
     public Sprite[] Personagens;//sprite de personagens
     public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
-    public string troca;//Tecla de troca de personagem
+    public string trocaRight;//Tecla de troca de personagem
+    public string trocaLeft;
     private int indicePersonagens = 0;
 
 
@@ -23,9 +24,26 @@ public class ChoosedPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        TrocaPersonagem();
+
         
-        //Troca de sprite
-        if (Input.GetButtonDown(troca))
+        if (Input.GetButtonDown(select))
+        {
+            isOnGame = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = PersonagensOnGame[indicePersonagens];          
+
+        }
+      
+    }
+
+
+    void TrocaPersonagem(){
+
+        ;
+
+        if (Input.GetButtonDown(trocaRight))
         {
 
             if (indicePersonagens == Personagens.Length - 1)
@@ -38,14 +56,22 @@ public class ChoosedPlayer : MonoBehaviour {
             }
             gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
         }
-       
-        //Confirma o jogador e muda o sprite para o sprite de confirmação
-        if (Input.GetButtonDown(select))
-        {
-            isOnGame = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = PersonagensOnGame[indicePersonagens];          
 
+        if (Input.GetButtonDown(trocaLeft))
+        {
+
+            if (indicePersonagens == 0)
+            {
+                indicePersonagens = Personagens.Length - 1;
+            }
+            else
+            {
+                indicePersonagens--;
+            }
+            gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
         }
-  
+
     }
+
+
 }

@@ -535,7 +535,8 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  troca: Horizontal_P1
+  trocaRight: TrocaRight_P1
+  trocaLeft: TrocaLeft_P1
 --- !u!1 &1800666601
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -717,4 +718,5 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  troca: Horizontal_P2
+  trocaRight: TrocaRight_P2
+  trocaLeft: TrocaLeft_P2

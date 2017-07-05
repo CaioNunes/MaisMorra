@@ -12,31 +12,24 @@ public class BornController : MonoBehaviour{
 
 
     // Use this for initialization
-    void Start()
-    {
+    void Start(){
 
         player = FindObjectsOfType<ChoosedPlayer>();
         InstantiatePlayer();
-        
-
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
 
     }
 
     void InstantiatePlayer(){
-        for (int i = 0; i < player.Length; i++)
-        {
+        for (int i = 0; i < player.Length; i++){
 
-            if (player[i].isOnGame)
-            {
+            if (player[i].isOnGame){
                 string spriteName = player[i].GetComponent<SpriteRenderer>().sprite.name;
-                Debug.Log(spriteName);
-                switch (spriteName)
-                {
+                
+                switch (spriteName){
                     case "mago_1":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[0];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[0];

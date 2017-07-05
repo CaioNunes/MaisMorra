@@ -7,22 +7,24 @@ public class ChooserController : MonoBehaviour {
 
 	public GameObject p1;
 	public GameObject p2;
+    private bool personagemRepetido;
 
 	public string start;
 	public bool haveTwoPlayers = false;
-	private 
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (p1);
 		DontDestroyOnLoad (p2);
-        
+        personagemRepetido = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(p2.GetComponent<SpriteRenderer>().sprite.name);
+
+        PersonagemRepetido();
+
         if (Input.GetButtonDown (start)) {
-			if (haveTwoPlayers) {
+			if (haveTwoPlayers && personagemRepetido == false) {
 				
 				SceneManager.LoadScene ("Game");
 				p1.GetComponent<SpriteRenderer> ().enabled = false;
@@ -37,4 +39,20 @@ public class ChooserController : MonoBehaviour {
 			
 		
 	}
+
+    void PersonagemRepetido(){
+        if(p1.GetComponent<SpriteRenderer>().sprite.name == p2.GetComponent<SpriteRenderer>().sprite.name){
+
+            personagemRepetido = true;
+        }
+        else{
+            personagemRepetido = false;
+        }
+    }
+
+
+
+
+
+
 }
