@@ -765,7 +765,7 @@ MonoBehaviour:
   plataform_8: {fileID: 1071722620542318, guid: 3d51b62f4c7343c45987d4b750a8210e,
     type: 2}
   birthValue: {x: 7, y: -9, z: 0}
-  platformCount: 10
+  platformCount: 20
   birthWait: 0.5
   startWait: 0
   waveWait: 0.5
@@ -992,7 +992,7 @@ Prefab:
     - target: {fileID: 114077653315513186, guid: 004314971c946a04cafdf122ba0dc286,
         type: 2}
       propertyPath: speed
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004314971c946a04cafdf122ba0dc286, type: 2}
@@ -1154,7 +1154,7 @@ Prefab:
     - target: {fileID: 114077653315513186, guid: 004314971c946a04cafdf122ba0dc286,
         type: 2}
       propertyPath: speed
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004314971c946a04cafdf122ba0dc286, type: 2}
