@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LooseController : MonoBehaviour {
 
-	private MovePlayer[] players;
+	public MovePlayer[] players;
     private TimerController timer;
     private int lessDeath = 10000;
 	private List<int> playersTieId = new List<int>();
@@ -16,19 +16,25 @@ public class LooseController : MonoBehaviour {
         timer = FindObjectOfType<TimerController>();
     }
 
-	void Update(){
-		if (timer.end) {
-			Debug.Log ("Disparei o change scene to winner");
-			changeSceneToWinner();
-		}
-	}
+    void Update() {
 
+        if (players.Length == 0) {
+            players = FindObjectsOfType<MovePlayer>();
+        }
+        
+        //Debug.Log(players[0].deaths);
+
+        if (timer.end) {
+            changeSceneToWinner();
+
+        }
+    }
 	void OnTriggerEnter2D(Collider2D colidedObject){
 
 		if(colidedObject.gameObject.tag == "Player" && colidedObject.gameObject.GetComponent<MovePlayer>().isAlive == true){
 			if (deathmatch == false) {
 				
-				colidedObject.gameObject.GetComponent<MovePlayer> ().isAlive = false;
+				colidedObject.gameObject.GetComponent<MovePlayer>().isAlive = false;
                 colidedObject.gameObject.GetComponent<MovePlayer>().deaths++;
             } else {
 				
@@ -42,8 +48,8 @@ public class LooseController : MonoBehaviour {
     }
 
 	void changeSceneToWinner(){
-
-		playersTieId.Clear();
+        
+        playersTieId.Clear();
         //Identifica menor quantidade de mortes
         for (int i = 0; i<players.Length; i++){
             if (players[i].deaths < lessDeath){
