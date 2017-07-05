@@ -11,6 +11,7 @@ public class MovePlayer : MonoBehaviour {
 	public float dashDelay = 0f;
 	// Booleans
 	public bool estaNoSolo;
+	public bool canJump = true;
 	public bool canDoubleJump = true;
 	public bool canDash = true;
 	public bool isAlive = true;
@@ -70,12 +71,16 @@ public class MovePlayer : MonoBehaviour {
 
 	// Handles Jump when input is received
 	public void handleJumpMovimentation(){
+		if (estaNoSolo)
+			canJump = true;
+		
 		if (Input.GetButtonDown (jump)) {
-			if (estaNoSolo) {
+			if (canJump) {
 				Debug.Log ("ESTOU PULANDO");
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
+				canJump = false;
 				canDoubleJump = true;
 			} 
 			else {
@@ -84,6 +89,7 @@ public class MovePlayer : MonoBehaviour {
 					canDoubleJump = false;
 					rd2.velocity = new Vector2(rd2.velocity.x, 0);
 					rd2.AddForce (new Vector2(0, jumpForce));
+					canDoubleJump = false;
 				}
 			}
 		}
