@@ -18,6 +18,7 @@ public class LooseController : MonoBehaviour {
 
 	void Update(){
 		if (timer.end) {
+			Debug.Log ("Disparei o change scene to winner");
 			changeSceneToWinner();
 		}
 	}

@@ -22,6 +22,16 @@ public class TextController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (controller == null) {
+			all = FindObjectsOfType<MovePlayer> ();
+
+			foreach(MovePlayer player in all){
+				if (player.GetComponent<MovePlayer> ().id == id)
+					controller = player;
+			}
+		}
+
 		if(controller.deaths < 10)
 			deathText.text ="0" + (int)controller.deaths;
 		else
