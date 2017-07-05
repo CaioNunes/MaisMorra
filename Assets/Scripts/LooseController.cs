@@ -26,11 +26,11 @@ public class LooseController : MonoBehaviour {
 
 		if(colidedObject.gameObject.tag == "Player" && colidedObject.gameObject.GetComponent<MovePlayer>().isAlive == true){
 			if (deathmatch == false) {
-				Debug.Log ("Colidiu no modo Normal !\n");
+				
 				colidedObject.gameObject.GetComponent<MovePlayer> ().isAlive = false;
                 colidedObject.gameObject.GetComponent<MovePlayer>().deaths++;
             } else {
-				Debug.Log ("Colidiu no modo Morte Súbita\n");
+				
                 colidedObject.gameObject.GetComponent<MovePlayer>().isAlive = false;
                 colidedObject.gameObject.GetComponent<MovePlayer>().deaths++;
                 Destroy(colidedObject.gameObject);

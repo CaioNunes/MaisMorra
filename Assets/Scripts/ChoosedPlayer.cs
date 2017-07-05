@@ -7,25 +7,71 @@ public class ChoosedPlayer : MonoBehaviour {
 	public int id = 1;
 	public bool isOnGame = false;
 	public string select;
-	public Sprite sp1;
-//	public int choosed = 0;
-//	public int i = 0;
 
-	// Use this for initialization
-	void Start () {
-		//id = GameObject.FindGameObjectWithTag ("Manager").GetComponent<ChooseCharacter> ().id;
-	}
+    public Sprite[] Personagens;//sprite de personagens
+    public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
+    public string trocaRight;//Tecla de troca de personagem
+    public string trocaLeft;
+    private int indicePersonagens = 0;
+
+
+   
+    // Use this for initialization
+    void Start () {
+       
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown (select)) {
-			isOnGame = true;
-			gameObject.GetComponent<SpriteRenderer> ().sprite = sp1;
-		}
 
-	//	if (Mathf.Abs(Input.GetAxis (horizontal)) > 0) {
-	//		Debug.Log ("Character choose :" + choosed);
-	//		i++;
-	//	}
-	}
+
+        TrocaPersonagem();
+
+        
+        if (Input.GetButtonDown(select))
+        {
+            isOnGame = true;
+            gameObject.GetComponent<SpriteRenderer>().sprite = PersonagensOnGame[indicePersonagens];          
+
+        }
+      
+    }
+
+
+    void TrocaPersonagem(){
+
+        ;
+
+        if (Input.GetButtonDown(trocaRight))
+        {
+
+            if (indicePersonagens == Personagens.Length - 1)
+            {
+                indicePersonagens = 0;
+            }
+            else
+            {
+                indicePersonagens++;
+            }
+            gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
+        }
+
+        if (Input.GetButtonDown(trocaLeft))
+        {
+
+            if (indicePersonagens == 0)
+            {
+                indicePersonagens = Personagens.Length - 1;
+            }
+            else
+            {
+                indicePersonagens--;
+            }
+            gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
+        }
+
+    }
+
+
 }
