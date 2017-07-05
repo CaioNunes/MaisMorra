@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MovePlayer : MonoBehaviour {
 	// Floats
-	public float maxSpeed = 5f;
+	public float maxSpeed;
 	public float moveForce = 365f;
 	public float jumpForce = 1f;
-	public float dashForce = 1000f;
-	public float dashDelay = 0f;
+	public float dashForce;
+	public float dashDelay = 2f;
 	// Booleans
 	public bool estaNoSolo;
 	public bool canJump = true;
@@ -54,7 +54,6 @@ public class MovePlayer : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis (horizontalCtrl);
 		anim.SetFloat("move", Mathf.Abs(moveHorizontal));
 
-		//TODO -> Refactor this ifs and use only one Flip() call
 		if (moveHorizontal < 0 && !faceRight) {
 			Flip ();
 		} 
@@ -62,11 +61,14 @@ public class MovePlayer : MonoBehaviour {
 			Flip ();
 		}
 
-		if (moveHorizontal * rd2.velocity.x < maxSpeed) {
-			rd2.AddForce (Vector2.right * moveHorizontal * moveForce);
+		if (moveHorizontal > 0) {
+			transform.Translate(maxSpeed * Time.deltaTime, 0, 0);
 		}
-		if(Mathf.Abs(rd2.velocity.x) > maxSpeed)
-			rd2.velocity = new Vector2(Mathf.Sign(rd2.velocity.x) * maxSpeed, rd2.velocity.y);
+
+		if (moveHorizontal < 0) {
+			transform.Translate (-maxSpeed * Time.deltaTime, 0, 0);
+		}
+			
 	}
 
 	// Handles Jump when input is received
@@ -96,22 +98,25 @@ public class MovePlayer : MonoBehaviour {
 	}
 
 	public void handleDashMovimentation(){
+		dashDelay += Time.deltaTime;
+		if (dashDelay > 1) {
+			canDash = true;
+			dashDelay = 0;
+		}
+
 		if (Input.GetButtonDown (dash) && canDash) {
 			AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().Dash, transform.position);
 			if (faceRight) {
 				anim.Play ("dash");
-				rd2.AddForce (new Vector2 (-dashForce, 0));
-				//canDash = false;
+				transform.Translate(-dashForce * Time.deltaTime, 0, 0);
+				//rd2.AddForce (new Vector2 (-dashForce, 0));
+				canDash = false;
 			} else {
 				anim.Play ("dash");
-				rd2.AddForce (new Vector2 (dashForce, 0));
-				//canDash = false;
+				transform.Translate(dashForce * Time.deltaTime, 0, 0);
+				//rd2.AddForce (new Vector2 (dashForce, 0));
+				canDash = false;
 			}
-		}
-		dashDelay += Time.deltaTime;
-		if (dashDelay > 2) {
-			canDash = true;
-			dashDelay = 0;
 		}
 	}
 
