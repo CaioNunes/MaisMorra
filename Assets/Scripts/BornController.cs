@@ -21,9 +21,7 @@ public class BornController : MonoBehaviour{
         player.Sort((IComparer<ChoosedPlayer>)new sort());
         InstantiatePlayer();
     }
-
-   
-
+		
     // Update is called once per frame
     void Update(){
 
