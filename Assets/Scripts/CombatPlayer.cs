@@ -7,11 +7,12 @@ public class CombatPlayer : MonoBehaviour {
 	public string punch ;
 	public bool contact = false;
 	public GameObject testContact;
-	public float attackForce = 2000f;
+	public float attackForce;
 	public bool canAttack = true;
 	private float delayAttack = 0f;
 	public float maxSpeed = 5f;
 	public Animator anim;
+	public float dashForce;
 
 	// Use this for initialization
 	void Start () {
@@ -48,10 +49,10 @@ public class CombatPlayer : MonoBehaviour {
 			other.gameObject.GetComponent<Animator> ().Play ("caindo");
 
 			if (GetComponent<MovePlayer>().faceRight) {
-				other.gameObject.GetComponent<MovePlayer> ().rd2.AddForce (new Vector2 (-attackForce, 0));
-				//other.gameObject.GetComponent<MovePlayer>().rd2.velocity = new Vector2 (-attackForce, 0);
+				other.gameObject.GetComponent<MovePlayer> ().transform.Translate (dashForce * Time.deltaTime, 0, 0);
+				//other.gameObject.GetComponent<MovePlayer> ().rd2.AddForce (new Vector2 (-attackForce, 0));
 			} else {
-				other.gameObject.GetComponent<MovePlayer> ().rd2.AddForce (new Vector2 (attackForce, 0));
+				other.gameObject.GetComponent<MovePlayer> ().transform.Translate (-dashForce * Time.deltaTime, 0, 0);
 				//other.gameObject.GetComponent<MovePlayer>().rd2.velocity = new Vector2 (attackForce, 0);
 			}
 

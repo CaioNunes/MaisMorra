@@ -207,7 +207,7 @@ MonoBehaviour:
   maxSpeed: 7
   moveForce: 250
   jumpForce: 500
-  dashForce: 4000
+  dashForce: 150
   dashDelay: 0.1
   estaNoSolo: 1
   canJump: 1
@@ -271,10 +271,11 @@ MonoBehaviour:
   punch: Punch_P2
   contact: 1
   testContact: {fileID: 1794560959307592}
-  attackForce: 5000
+  attackForce: 500
   canAttack: 1
   maxSpeed: 5
   anim: {fileID: 95581077697253400}
+  dashForce: 0
 --- !u!212 &212472774404509336
 SpriteRenderer:
   m_ObjectHideFlags: 1
