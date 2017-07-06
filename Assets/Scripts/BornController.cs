@@ -15,10 +15,21 @@ public class BornController : MonoBehaviour{
     void Start(){
 
         player.Clear();
-        foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>())
+        foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
             player.Add(cs);
-
+        }
+        player.Sort((IComparer<ChoosedPlayer>)new sort());
         InstantiatePlayer();
+    }
+
+    private class sort : IComparer<ChoosedPlayer>
+    {
+        int IComparer<ChoosedPlayer>.Compare(ChoosedPlayer x, ChoosedPlayer y)
+        {
+            int t1 = x.id;
+            int t2 = y.id;
+            return t1.CompareTo(t2);
+        }
     }
 
     // Update is called once per frame
@@ -29,10 +40,9 @@ public class BornController : MonoBehaviour{
     void InstantiatePlayer(){
         
         for (int i = 0; i < player.Count; i++){
-            //Debug.Log(i);
+            
             if (player[i].isOnGame){
                 
-                //Debug.Log(player[i].GetComponent<SpriteRenderer>().sprite.name);
                 string spriteName = player[i].GetComponent<SpriteRenderer>().sprite.name;
                 
                 switch (spriteName){

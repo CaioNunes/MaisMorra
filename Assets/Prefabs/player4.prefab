@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114695393776161864}
   - component: {fileID: 114227458803451114}
   m_Layer: 8
-  m_Name: player2
+  m_Name: player4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353008025090196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.16, y: 0, z: 0}
+  m_LocalPosition: {x: 2.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4004595419511298}
@@ -142,7 +142,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.84}
+    oldSize: {x: 0.55, y: 0.94}
     newSize: {x: 0.57, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -167,7 +167,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.57, y: 0.84}
+    oldSize: {x: 0.55, y: 0.94}
     newSize: {x: 0.57, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -185,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1353008025090196}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed14bf2379148aa4f9d70d521d6b7418, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38037bf728d8a524d8aaff582da16a71, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -218,11 +218,11 @@ MonoBehaviour:
   testSolo: {fileID: 4004595419511298}
   rd2: {fileID: 50936810245543120}
   anim: {fileID: 95581077697253400}
-  id: 2
+  id: 4
   deaths: 0
-  horizontalCtrl: Horizontal_P2
-  jump: Jump_P2
-  dash: Dash_P2
+  horizontalCtrl: Horizontal_P4
+  jump: Jump_P4
+  dash: Dash_P4
 --- !u!114 &114227458803451114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d732a738ce38d43b29391978fa3417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  punch: Punch_P2
+  punch: Punch_P4
   contact: 1
   testContact: {fileID: 1794560959307592}
   attackForce: 500
@@ -308,7 +308,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8c62fab1a8a1794b9c92bdc64c689c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

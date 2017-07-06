@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class ChooserController : MonoBehaviour {
 
-	public GameObject p1;
-	public GameObject p2;
+    private List<ChoosedPlayer> sprites = new List<ChoosedPlayer>();
     private bool personagemRepetido;
 
 	public string start;
-	public bool haveTwoPlayers = false;
 	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad (p1);
-		DontDestroyOnLoad (p2);
+
+        foreach(ChoosedPlayer p in FindObjectsOfType<ChoosedPlayer>()){
+            DontDestroyOnLoad (p);
+            sprites.Add(p);
+        }
+
         personagemRepetido = false;
 	}
 	
@@ -24,30 +26,61 @@ public class ChooserController : MonoBehaviour {
         PersonagemRepetido();
 
         if (Input.GetButtonDown (start)) {
-			if (haveTwoPlayers && personagemRepetido == false) {
-				
-				SceneManager.LoadScene ("Game");
-				p1.GetComponent<SpriteRenderer> ().enabled = false;
-				p2.GetComponent<SpriteRenderer> ().enabled = false;
-			}
-		}
+			if (HaveTwoPlayers() && !personagemRepetido) {
 
+                foreach (ChoosedPlayer sprite in sprites)
+                {
+                    sprite.GetComponent<SpriteRenderer>().enabled = false;
+                }
 
-		if (p1.GetComponent<ChoosedPlayer> ().isOnGame && p2.GetComponent<ChoosedPlayer> ().isOnGame) {
-			haveTwoPlayers = true;
+                SceneManager.LoadScene ("Game");
+                				
+            }
 		}
-			
-		
+        
 	}
 
-    void PersonagemRepetido(){
-        if(p1.GetComponent<SpriteRenderer>().sprite.name == p2.GetComponent<SpriteRenderer>().sprite.name){
+    bool HaveTwoPlayers()
+    {
+        int playersInGame = 0;
+        foreach(ChoosedPlayer player in sprites)
+        {
+            if (player.isOnGame)
+            {
+                playersInGame++;
+            }
+        }
 
-            personagemRepetido = true;
+        if (playersInGame >= 2)
+        {
+            return true;
         }
-        else{
-            personagemRepetido = false;
+        else
+        {
+            return false;
         }
+    }
+
+
+
+    void PersonagemRepetido(){
+
+        personagemRepetido = false;
+        for(int i = 0; i < sprites.Count-1; i++)
+        {
+
+            for(int j = i + 1; j < sprites.Count; j++)
+            {
+                if(sprites[j].GetComponent<SpriteRenderer>().sprite.name == sprites[i].GetComponent<SpriteRenderer>().sprite.name)
+                {
+                    personagemRepetido = true;
+                }
+                
+            }
+
+
+        }
+        
     }
 
 

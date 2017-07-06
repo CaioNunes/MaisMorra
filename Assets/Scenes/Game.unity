@@ -849,6 +849,8 @@ MonoBehaviour:
   prefabPlayer:
   - {fileID: 1630932884619452, guid: 44076656116d47042b25381e7de15582, type: 2}
   - {fileID: 1353008025090196, guid: 25393c4c3aca66e45931e64d3e76f96a, type: 2}
+  - {fileID: 1630932884619452, guid: 846cc9adf9a6cf64ebe580832deaa3d7, type: 2}
+  - {fileID: 1353008025090196, guid: 680d180b7a7d04c41986c75bfcf7967a, type: 2}
   animatorPlayer:
   - {fileID: 9100000, guid: f6cfc7a5ca5d826449535f371ecc83da, type: 2}
   - {fileID: 9100000, guid: ed14bf2379148aa4f9d70d521d6b7418, type: 2}
