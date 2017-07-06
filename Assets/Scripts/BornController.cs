@@ -22,15 +22,7 @@ public class BornController : MonoBehaviour{
         InstantiatePlayer();
     }
 
-    private class sort : IComparer<ChoosedPlayer>
-    {
-        int IComparer<ChoosedPlayer>.Compare(ChoosedPlayer x, ChoosedPlayer y)
-        {
-            int t1 = x.id;
-            int t2 = y.id;
-            return t1.CompareTo(t2);
-        }
-    }
+   
 
     // Update is called once per frame
     void Update(){
@@ -76,9 +68,17 @@ public class BornController : MonoBehaviour{
 
         }
 
-
-
     }
+
+	private class sort : IComparer<ChoosedPlayer>
+	{
+		int IComparer<ChoosedPlayer>.Compare(ChoosedPlayer x, ChoosedPlayer y)
+		{
+			int t1 = x.id;
+			int t2 = y.id;
+			return t1.CompareTo(t2);
+		}
+	}
 
 }
 
