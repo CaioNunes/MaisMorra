@@ -48,6 +48,18 @@ public class BornController : MonoBehaviour{
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
+                    case "peixe_1":
+                        prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[2];
+                        prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[2];
+                        Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
+                        break;
+
+                    case "Respiracao_verdeM_0":
+                        prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[3];
+                        prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[3];
+                        Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
+                        break;
+
                 }
 
             }
