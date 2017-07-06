@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BornController : MonoBehaviour{
 
-    ChoosedPlayer[] player;
+    List <ChoosedPlayer> player = new List<ChoosedPlayer>();
     public Sprite[] personagens;
     public GameObject[] prefabPlayer;
     public RuntimeAnimatorController[] animatorPlayer;
@@ -14,7 +14,10 @@ public class BornController : MonoBehaviour{
     // Use this for initialization
     void Start(){
 
-        player = FindObjectsOfType<ChoosedPlayer>();
+        player.Clear();
+        foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>())
+            player.Add(cs);
+
         InstantiatePlayer();
     }
 
@@ -24,9 +27,12 @@ public class BornController : MonoBehaviour{
     }
 
     void InstantiatePlayer(){
-        for (int i = 0; i < player.Length; i++){
-
+        
+        for (int i = 0; i < player.Count; i++){
+            //Debug.Log(i);
             if (player[i].isOnGame){
+                
+                //Debug.Log(player[i].GetComponent<SpriteRenderer>().sprite.name);
                 string spriteName = player[i].GetComponent<SpriteRenderer>().sprite.name;
                 
                 switch (spriteName){

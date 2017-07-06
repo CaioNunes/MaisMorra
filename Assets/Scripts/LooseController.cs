@@ -66,6 +66,9 @@ public class LooseController : MonoBehaviour {
 	
         //Verifica se houve empate ou não, e define o estado baseado nisso.
         if (playersTieId.Count == 1){
+            foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>())
+                Destroy(cs.gameObject);
+
 			SceneManager.LoadScene("Win"+playersTieId[0]);
         } else {
             deathmatch = true;

@@ -78,7 +78,6 @@ public class MovePlayer : MonoBehaviour {
 		
 		if (Input.GetButtonDown (jump)) {
 			if (canJump) {
-				Debug.Log ("ESTOU PULANDO");
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));

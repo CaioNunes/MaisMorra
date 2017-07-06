@@ -18,7 +18,8 @@ public class ChoosedPlayer : MonoBehaviour {
    
     // Use this for initialization
     void Start () {
-       
+
+        
         
     }
 	
