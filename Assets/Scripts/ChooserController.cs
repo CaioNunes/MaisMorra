@@ -26,7 +26,9 @@ public class ChooserController : MonoBehaviour {
         PersonagemRepetido();
 
         if (Input.GetButtonDown (start)) {
-			if (HaveTwoPlayers() && !personagemRepetido) {
+            Debug.Log("dois jogadores:"+HaveTwoPlayers());
+            Debug.Log("personagem repetido:" + personagemRepetido);
+            if (HaveTwoPlayers() && personagemRepetido == false) {
 
                 foreach (ChoosedPlayer sprite in sprites)
                 {
@@ -68,17 +70,18 @@ public class ChooserController : MonoBehaviour {
         personagemRepetido = false;
         for(int i = 0; i < sprites.Count-1; i++)
         {
-
-            for(int j = i + 1; j < sprites.Count; j++)
+            if (sprites[i].isOnGame)
             {
-                if(sprites[j].GetComponent<SpriteRenderer>().sprite.name == sprites[i].GetComponent<SpriteRenderer>().sprite.name)
+                for (int j = i + 1; j < sprites.Count; j++)
                 {
-                    personagemRepetido = true;
+                    if (sprites[j].GetComponent<SpriteRenderer>().sprite.name == sprites[i].GetComponent<SpriteRenderer>().sprite.name)
+                    {
+                        personagemRepetido = true;
+                    }
+
                 }
-                
-            }
 
-
+            }    
         }
         
     }
