@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353008025090196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.16, y: 0, z: 0}
+  m_LocalPosition: {x: -0.91, y: -2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4004595419511298}
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0049381256, y: 0.011902571}
+  m_Offset: {x: -0.032948136, y: 0.011902571}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -149,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53821605, y: 0.7866516}
+  m_Size: {x: 0.2654345, y: 0.7866516}
   m_EdgeRadius: 0
 --- !u!61 &61371965170986954
 BoxCollider2D:
@@ -163,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06978798}
+  m_Offset: {x: 0.01894316, y: 0.06978798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -174,7 +174,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7003745, y: 0.5815252}
+  m_Size: {x: 0.7382608, y: 0.5815252}
   m_EdgeRadius: 0
 --- !u!95 &95581077697253400
 Animator:
@@ -269,8 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punch: Punch_P2
-  contact: 1
-  testContact: {fileID: 1794560959307592}
   attackForce: 500
   canAttack: 1
   maxSpeed: 5

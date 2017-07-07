@@ -7,10 +7,14 @@ public class ChooserController : MonoBehaviour {
 
     private List<ChoosedPlayer> sprites = new List<ChoosedPlayer>();
     private bool personagemRepetido;
+    public bool selecao ;
+    
 
 	public string start;
 	// Use this for initialization
 	void Start () {
+
+        selecao = true;
 
         foreach(ChoosedPlayer p in FindObjectsOfType<ChoosedPlayer>()){
             DontDestroyOnLoad (p);
@@ -26,8 +30,7 @@ public class ChooserController : MonoBehaviour {
         PersonagemRepetido();
 
         if (Input.GetButtonDown (start)) {
-            Debug.Log("dois jogadores:"+HaveTwoPlayers());
-            Debug.Log("personagem repetido:" + personagemRepetido);
+       
             if (HaveTwoPlayers() && personagemRepetido == false) {
 
                 foreach (ChoosedPlayer sprite in sprites)
@@ -36,7 +39,7 @@ public class ChooserController : MonoBehaviour {
                 }
 
                 SceneManager.LoadScene ("Game");
-                				
+                selecao = false; 		
             }
 		}
         

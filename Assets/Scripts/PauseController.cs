@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseController : MonoBehaviour {	
-	bool paused = false;
+    private bool paused = false;
+    public string pauseButton;
 
 	void Update () {
-		if(Input.GetButtonDown("PauseButton")){
+		if(Input.GetButtonDown(pauseButton)){
 			paused = togglePause();
+            
 		}
 	}
 

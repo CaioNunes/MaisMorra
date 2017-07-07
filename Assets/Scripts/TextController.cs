@@ -32,10 +32,13 @@ public class TextController : MonoBehaviour {
 			}
 		}
 
-		if(controller.deaths < 10)
-			deathText.text ="0" + (int)controller.deaths;
-		else
-			deathText.text ="" + (int)controller.deaths;
-		
-	}
+        if (controller != null) {
+            if (controller.deaths < 10)
+                deathText.text = "0" + (int)controller.deaths;
+            else
+                deathText.text = "" + (int)controller.deaths;
+
+        }
+
+    }
 }

@@ -22,8 +22,6 @@ public class LooseController : MonoBehaviour {
             players = FindObjectsOfType<MovePlayer>();
         }
         
-        //Debug.Log(players[0].deaths);
-
         if (timer.end) {
             changeSceneToWinner();
 
@@ -56,20 +54,21 @@ public class LooseController : MonoBehaviour {
                 lessDeath = players[i].deaths;
             }
         }
-	
+
         //Adiciona na lista de empates todos que tiveram a menor quantidade de mortes
         for(int i = 0; i < players.Length; i++){
             if (players[i].deaths == lessDeath){
                 playersTieId.Add(players[i].id);
             }
         }
-	
         //Verifica se houve empate ou não, e define o estado baseado nisso.
         if (playersTieId.Count == 1){
-            //foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>())
-                //Destroy(cs.gameObject);
-
-			SceneManager.LoadScene("Win"+playersTieId[0]);
+            foreach(MovePlayer spritePLayer in players)
+            {
+                spritePLayer.GetComponent<SpriteRenderer>().sprite = spritePLayer.GetComponent<SpriteRenderer>().sprite;
+            }
+            SceneManager.LoadScene("Win"+playersTieId[0]);
+            
         } else {
             deathmatch = true;
             foreach (MovePlayer player in players) {

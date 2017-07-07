@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114580090587643470}
   - component: {fileID: 82400633945478154}
   - component: {fileID: 81503477189493494}
-  - component: {fileID: 114307368393782426}
+  - component: {fileID: 114112832595476744}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -130,7 +130,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114307368393782426
+--- !u!114 &114112832595476744
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,11 +138,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721155661181974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a9618ed3628bc4399b580c14c370c3, type: 3}
+  m_Script: {fileID: 11500000, guid: b4274fdb1a530b64385f8e7dbdd5b62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab1: {fileID: 1099942698008306, guid: 8adc2ce23e9f8254a8cabef22cfbd8e7, type: 2}
-  prefab2: {fileID: 1941220624238960, guid: 95e58cdcb2e3d9147b112adb075d71d6, type: 2}
+  personagens:
+  - {fileID: 21300000, guid: d3ec8e76ad87f894d96382307d9c1787, type: 3}
+  - {fileID: 21300000, guid: d8c62fab1a8a1794b9c92bdc64c689c1, type: 3}
+  - {fileID: 21300000, guid: bd53252c7e65fe049ba22b76f1032462, type: 3}
+  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  prefabPlayer:
+  - {fileID: 1630932884619452, guid: 44076656116d47042b25381e7de15582, type: 2}
+  - {fileID: 1353008025090196, guid: 25393c4c3aca66e45931e64d3e76f96a, type: 2}
+  - {fileID: 1630932884619452, guid: 846cc9adf9a6cf64ebe580832deaa3d7, type: 2}
+  - {fileID: 1353008025090196, guid: 680d180b7a7d04c41986c75bfcf7967a, type: 2}
+  animatorPlayer:
+  - {fileID: 9100000, guid: f6cfc7a5ca5d826449535f371ecc83da, type: 2}
+  - {fileID: 9100000, guid: ed14bf2379148aa4f9d70d521d6b7418, type: 2}
+  - {fileID: 9100000, guid: 66bba5a11d3e6c84480c5ae52d4e7b03, type: 2}
+  - {fileID: 9100000, guid: 38037bf728d8a524d8aaff582da16a71, type: 2}
 --- !u!114 &114580090587643470
 MonoBehaviour:
   m_ObjectHideFlags: 1

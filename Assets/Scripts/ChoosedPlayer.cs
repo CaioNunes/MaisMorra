@@ -14,22 +14,25 @@ public class ChoosedPlayer : MonoBehaviour {
     public string trocaLeft;
     private int indicePersonagens = 0;
 
+    ChooserController telaDeSelecao;
+
 
    
     // Use this for initialization
     void Start () {
-
-        
-        
+        telaDeSelecao = FindObjectOfType <ChooserController>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
+        if (telaDeSelecao.selecao)
+        {
+            TrocaPersonagem();
 
-        TrocaPersonagem();
-
+        }     
         
+                
         if (Input.GetButtonDown(select))
         {
             isOnGame = true;
@@ -41,8 +44,6 @@ public class ChoosedPlayer : MonoBehaviour {
 
 
     void TrocaPersonagem(){
-
-        ;
 
         if (Input.GetButtonDown(trocaRight))
         {

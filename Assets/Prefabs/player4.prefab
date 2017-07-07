@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353008025090196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.16, y: 0, z: 0}
+  m_LocalPosition: {x: 3.84, y: -2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4004595419511298}
@@ -138,18 +138,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0049381256, y: 0.011902571}
+  m_Offset: {x: -0.029834747, y: 0.011902571}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55, y: 0.94}
+    oldSize: {x: 0.57, y: 0.84}
     newSize: {x: 0.57, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53821605, y: 0.7866516}
+  m_Size: {x: 0.26369286, y: 0.7866516}
   m_EdgeRadius: 0
 --- !u!61 &61371965170986954
 BoxCollider2D:
@@ -163,18 +163,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06978798}
+  m_Offset: {x: 0.02562216, y: 0.06978798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55, y: 0.94}
+    oldSize: {x: 0.57, y: 0.84}
     newSize: {x: 0.57, y: 0.84}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7003745, y: 0.5815252}
+  m_Size: {x: 0.7516188, y: 0.5815252}
   m_EdgeRadius: 0
 --- !u!95 &95581077697253400
 Animator:
@@ -185,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1353008025090196}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38037bf728d8a524d8aaff582da16a71, type: 2}
+  m_Controller: {fileID: 9100000, guid: ed14bf2379148aa4f9d70d521d6b7418, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -269,8 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   punch: Punch_P4
-  contact: 1
-  testContact: {fileID: 1794560959307592}
   attackForce: 500
   canAttack: 1
   maxSpeed: 5
@@ -308,7 +306,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8c62fab1a8a1794b9c92bdc64c689c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
