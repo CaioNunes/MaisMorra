@@ -12,8 +12,8 @@ public class TimerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		minutes = 1;
-        seconds = 0f;
+		minutes = 0;
+        seconds = 10f;
 	}
 	
 	// Update is called once per frame

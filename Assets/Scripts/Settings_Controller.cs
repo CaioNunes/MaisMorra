@@ -20,10 +20,22 @@ public class Settings_Controller : MonoBehaviour {
     public Canvas menuOptions;
     public bool isOpen = false;
 
+    private static int instanceNew = 0;
+
+    private void Awake() {
+        instanceNew++;
+    }
 
     private void Start()
     {
-        DontDestroyOnLoad(this);
+        Debug.Log(instanceNew);
+        if (instanceNew > 1)
+        {
+            //Nothing to do.
+        }
+        else {
+            DontDestroyOnLoad(this);
+        }
 
         menuOptions.enabled = false;
 
