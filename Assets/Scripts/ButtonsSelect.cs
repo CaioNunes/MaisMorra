@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ButtonsSelect : MonoBehaviour {
 
-    public Button start;
-    public Button options;
-    public Button quit;
-    private int cont = 0;
-    public string jump_p1;
-
-	// Use this for initialization
-	void Start () {
-        start.Select();
+    // Use this for initialization
+    void Start() {
+        this.GetComponent<Button>().Select();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetButtonDown(jump_p1)) {
-            if (start.enabled)
-                Debug.Log("Pressionou o botão");
-        }
+
+    // Update is called once per frame
+    void Update() {
+
 	}
+
+   
+   
 }
