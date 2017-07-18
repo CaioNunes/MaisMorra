@@ -10,6 +10,7 @@ TagManager:
   - Platform Lines
   - Sprite
   - Bullet
+  - Music
   layers:
   - Default
   - TransparentFX
