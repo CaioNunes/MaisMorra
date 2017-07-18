@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1630932884619452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -2.35, z: 0}
+  m_LocalPosition: {x: 2.27, y: -2.59, z: -0.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4608238022793830}
@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03e35b3adb88000478dde6c98c24d68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: -9.31, y: -5.5}
-  plataform_position: {x: -9.31, y: -6.7}
+  position: {x: -7.9, y: -4.5}
+  plataform_position: {x: -7.9, y: -5.5}
   plataform: {fileID: 1910123850359460, guid: 004314971c946a04cafdf122ba0dc286, type: 2}
   deathText: {fileID: 0}
 --- !u!212 &212210800736713314

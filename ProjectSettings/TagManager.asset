@@ -9,6 +9,7 @@ TagManager:
   - Death
   - Platform Lines
   - Sprite
+  - Bullet
   layers:
   - Default
   - TransparentFX

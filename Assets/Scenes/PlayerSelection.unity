@@ -536,6 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selecao: 0
+  retorno: Dash_P1
   start: Start_P1
 --- !u!1 &787115758
 GameObject:

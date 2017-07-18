@@ -8,9 +8,9 @@ public class ChooserController : MonoBehaviour {
     private List<ChoosedPlayer> sprites = new List<ChoosedPlayer>();
     private bool personagemRepetido;
     public bool selecao ;
-    
-
+    public string retorno;
 	public string start;
+
 	// Use this for initialization
 	void Start () {
 
@@ -42,6 +42,10 @@ public class ChooserController : MonoBehaviour {
                 selecao = false; 		
             }
 		}
+
+        if (Input.GetButtonDown(retorno)){
+            SceneManager.LoadScene("Start");
+        }
         
 	}
 

@@ -41,15 +41,10 @@ public class Settings_Controller : MonoBehaviour {
 
         gameSettings = new GameSettings();
         muteItAllToggle.isOn = false;
-        fullScreenToggle.isOn = false;
         musicSlider.value = 1;
         
 
-        resolutions = Screen.resolutions;
-        foreach (Resolution resolution in resolutions)
-        {
-            resolutionDropdown.options.Add(new Dropdown.OptionData(resolution.ToString()));
-        }
+        
     }
 
 
@@ -66,7 +61,6 @@ public class Settings_Controller : MonoBehaviour {
             musicSource = FindObjectsOfType<AudioSource>();
             OnMuteItAll();
             OnFullscreen();
-            OnResolution();
             OnMusic();
 
 
@@ -93,7 +87,6 @@ public class Settings_Controller : MonoBehaviour {
             if (isOpen)
             {
                 fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
-                resolutionDropdown.onValueChanged.AddListener(delegate { OnResolution(); });
                 musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
             }
         }
@@ -137,12 +130,7 @@ public class Settings_Controller : MonoBehaviour {
         
     }
 
-    public void OnResolution()
-    {
-        Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, gameSettings.fullScreen);
-    }
-
-    
+        
     public void SaveChanges()
     {
 
