@@ -49,6 +49,7 @@ public class ChoosedPlayer : MonoBehaviour {
         if (Input.GetButtonDown(trocaRight))
         {
             trocaSound.Play();
+            isOnGame = false;
 
             if (indicePersonagens == Personagens.Length - 1)
             {
@@ -65,6 +66,7 @@ public class ChoosedPlayer : MonoBehaviour {
         {
 
             trocaSound.Play();
+            isOnGame = false;
 
             if (indicePersonagens == 0)
             {

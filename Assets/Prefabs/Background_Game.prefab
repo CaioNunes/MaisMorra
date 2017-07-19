@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712590433038380}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1007.00006, y: -905, z: -229}
+  m_LocalPosition: {x: 1007.00006, y: -905, z: 0}
   m_LocalScale: {x: 5.670879, y: 9, z: 0}
   m_Children:
   - {fileID: 4732981949982414}
@@ -269,6 +269,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212071248482873442
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -310,6 +311,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212172607130907782
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -351,6 +353,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212739767312665124
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -392,6 +395,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!212 &212838997299162594
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -433,3 +437,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
