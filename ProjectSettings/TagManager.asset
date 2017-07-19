@@ -11,6 +11,7 @@ TagManager:
   - Sprite
   - Bullet
   - Music
+  - BackButton
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - Platform
   - Walls
-  - 
+  - Background
   - 
   - 
   - 

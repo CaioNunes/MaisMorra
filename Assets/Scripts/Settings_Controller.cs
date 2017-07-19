@@ -8,40 +8,24 @@ public class Settings_Controller : MonoBehaviour {
 
     public Toggle fullScreenToggle;
     public Toggle muteItAllToggle;
-    public Slider musicSlider;
-    public Dropdown resolutionDropdown;
-    
-
+    public Slider musicSlider; 
     public AudioSource[] musicSource;
-    public Resolution[] resolutions;
     public GameSettings gameSettings;
 
     public string abrirOptions;
-    public Canvas menuOptions;
+    public Canvas canvasMenuOptions;
     public bool isOpen = false;
-
-    private static int instanceNew = 0;
-
-    private void Awake() {
-        instanceNew++;
-    }
-
+        
+    
     private void Start()
     {
-        Debug.Log(instanceNew);
-        if (instanceNew > 1)
-        {
-            //Nothing to do.
-        }
-        else {
-            DontDestroyOnLoad(this);
-        }
+        
+        canvasMenuOptions.enabled = false;
 
-        menuOptions.enabled = false;
-
-        gameSettings = new GameSettings();
-        muteItAllToggle.isOn = false;
-        musicSlider.value = 1;
+        gameSettings = FindObjectOfType<GameSettings>();
+        muteItAllToggle.isOn = gameSettings.MuteItAll;
+        Debug.Log(muteItAllToggle.isOn);
+        musicSlider.value = gameSettings.Music;
         
 
         
@@ -51,13 +35,7 @@ public class Settings_Controller : MonoBehaviour {
 
 
     void Update() {
-        
-        if (SceneManager.GetActiveScene().name == "PlayerSelection")
-        {
-            // Se estiver na tela de personagens nao muda settings
-        }
-        else
-        {
+                
             musicSource = FindObjectsOfType<AudioSource>();
             OnMuteItAll();
             OnFullscreen();
@@ -66,20 +44,7 @@ public class Settings_Controller : MonoBehaviour {
 
             if (Input.GetButtonDown(abrirOptions))
             {
-                if (isOpen)
-                {
-                    menuOptions.enabled = false;
-                    isOpen = false;
-                }
-
-
-                else
-                {
-                    menuOptions.enabled = true;
-                    isOpen = true;
-                }
-
-
+            AbrirMenuOptions();
             }
 
 
@@ -89,15 +54,29 @@ public class Settings_Controller : MonoBehaviour {
                 fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
                 musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
             }
+    }
+     
+
+
+    public void AbrirMenuOptions()
+    {
+        if (isOpen)
+        {
+            canvasMenuOptions.enabled = false;
+            isOpen = false;
         }
-     }
 
 
-
+        else
+        {
+            canvasMenuOptions.enabled = true;
+            isOpen = true;
+        }
+    }
 
     public void OnFullscreen()
     {
-        Screen.fullScreen = gameSettings.fullScreen = fullScreenToggle.isOn;
+        Screen.fullScreen = gameSettings.FullScreen = fullScreenToggle.isOn;
     }
 
     public void OnMuteItAll()
@@ -105,14 +84,16 @@ public class Settings_Controller : MonoBehaviour {
                
             for (int i = 0; i < musicSource.Length; i++)
             {
-                if (muteItAllToggle.isOn)
+                if (muteItAllToggle.isOn == true)
                 {
-                    musicSource[i].volume = gameSettings.music = 0;
+                    gameSettings.MuteItAll = true;
+                    musicSource[i].volume = 0 ;
                 }
                 else
                 {
-                musicSource[i].volume = gameSettings.music = musicSlider.value;
-            }
+                    gameSettings.MuteItAll = false;
+                    musicSource[i].volume = gameSettings.Music = musicSlider.value;
+                }
                 
             }                      
     }
@@ -120,25 +101,16 @@ public class Settings_Controller : MonoBehaviour {
     
     public void OnMusic()
     {
-        if (!muteItAllToggle.isOn)
+        if (muteItAllToggle.isOn == false)
         {
             for (int i = 0; i < musicSource.Length; i++)
             {
-                musicSource[i].volume = gameSettings.music = musicSlider.value;
+                musicSource[i].volume = gameSettings.Music = musicSlider.value;
             }
         }
         
     }
-
-        
-    public void SaveChanges()
-    {
-
-    }
-
-    public void LoadSettings()
-    {
-
-    }
+           
+    
     
 }

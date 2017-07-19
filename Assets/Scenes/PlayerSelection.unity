@@ -227,16 +227,17 @@ MonoBehaviour:
   id: 4
   isOnGame: 0
   select: Jump_P4
+  trocaSound: {fileID: 2073047008}
   Personagens:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 8e5dc1aab1c85dc4cb9eeb5c384c1602, type: 3}
+  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   trocaRight: TrocaRight_P4
   trocaLeft: TrocaLeft_P4
 --- !u!212 &149006601
@@ -303,6 +304,8 @@ GameObject:
   m_Component:
   - component: {fileID: 155524761}
   - component: {fileID: 155524760}
+  - component: {fileID: 155524764}
+  - component: {fileID: 155524763}
   m_Layer: 0
   m_Name: LevelMananger
   m_TagString: Untagged
@@ -332,10 +335,106 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2073047007}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &155524763
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155524759}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0f606e2c631be5d459e40ef878c7b832, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &155524764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155524759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d9b2f288eaa4043bae51dfdcae3ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selecao: 0
+  retorno: Dash_P1
+  start: Start_P1
+  falhaIniciar: {fileID: 155524763}
 --- !u!1 &172905732
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,49 +594,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &363157061
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 363157062}
-  - component: {fileID: 363157063}
-  m_Layer: 0
-  m_Name: Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &363157062
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 363157061}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.92, y: 4.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &363157063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 363157061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d9b2f288eaa4043bae51dfdcae3ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selecao: 0
-  retorno: Dash_P1
-  start: Start_P1
 --- !u!1 &787115758
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,16 +855,17 @@ MonoBehaviour:
   id: 1
   isOnGame: 0
   select: Jump_P1
+  trocaSound: {fileID: 2073047008}
   Personagens:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 8e5dc1aab1c85dc4cb9eeb5c384c1602, type: 3}
+  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   trocaRight: TrocaRight_P1
   trocaLeft: TrocaLeft_P1
 --- !u!1 &1536983141
@@ -842,16 +899,17 @@ MonoBehaviour:
   id: 3
   isOnGame: 0
   select: Jump_P3
+  trocaSound: {fileID: 2073047008}
   Personagens:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 8e5dc1aab1c85dc4cb9eeb5c384c1602, type: 3}
+  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   trocaRight: TrocaRight_P3
   trocaLeft: TrocaLeft_P3
 --- !u!212 &1536983143
@@ -996,6 +1054,115 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2073047006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2073047007}
+  - component: {fileID: 2073047008}
+  m_Layer: 0
+  m_Name: TrocaSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2073047007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073047006}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 155524761}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2073047008
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2073047006}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cba53ec36b1277d4aaa8f503ea276923, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &2131876829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,15 +1248,16 @@ MonoBehaviour:
   id: 2
   isOnGame: 0
   select: Jump_P2
+  trocaSound: {fileID: 2073047008}
   Personagens:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 8e5dc1aab1c85dc4cb9eeb5c384c1602, type: 3}
+  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   trocaRight: TrocaRight_P2
   trocaLeft: TrocaLeft_P2

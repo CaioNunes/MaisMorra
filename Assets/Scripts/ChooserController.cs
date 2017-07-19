@@ -10,7 +10,8 @@ public class ChooserController : MonoBehaviour {
     public bool selecao ;
     public string retorno;
 	public string start;
-
+    public AudioSource falhaIniciar ;
+    
 	// Use this for initialization
 	void Start () {
 
@@ -22,7 +23,8 @@ public class ChooserController : MonoBehaviour {
         }
 
         personagemRepetido = false;
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -39,7 +41,11 @@ public class ChooserController : MonoBehaviour {
                 }
 
                 SceneManager.LoadScene ("Game");
-                selecao = false; 		
+                selecao = false;
+            }
+            else
+            {
+                falhaIniciar.Play();
             }
 		}
 
