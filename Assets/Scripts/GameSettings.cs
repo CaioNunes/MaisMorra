@@ -6,10 +6,19 @@ using UnityEngine.EventSystems;
 
 public class GameSettings : MonoBehaviour
 {
-    private bool fullScreen = false;
+    private bool fullScreen = true;
     private bool muteItAll = false;
     private float music = 1f;
     public AudioClip soundSelect;
+
+
+    private void Awake()
+    {
+        if(FindObjectsOfType<GameSettings>().Length > 1)
+        {
+            DestroyImmediate(this.gameObject);
+        }
+    }
 
     private void Start()
     {

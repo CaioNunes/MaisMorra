@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 5.8}
+  m_AnchoredPosition: {x: 1.37, y: 5.8}
   m_SizeDelta: {x: 16, y: 0.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &58250647
@@ -621,7 +621,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.037436962, y: -1.2528644}
+  m_Offset: {x: -0.09390783, y: -1.2528644}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -632,7 +632,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.074875, y: 14.648316}
+  m_Size: {x: 19.812183, y: 14.648316}
   m_EdgeRadius: 0
 --- !u!4 &272548209
 Transform:
@@ -874,7 +874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -52.999996, y: 0}
   m_SizeDelta: {x: 81.732, y: 25.145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310481784
@@ -925,7 +925,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4462391215832182, guid: e8ec1b0de56e46f47a472d4a3ac30c72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.24
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4462391215832182, guid: e8ec1b0de56e46f47a472d4a3ac30c72, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1557,7 +1557,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -2823,7 +2823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 1910123850359460, guid: 004314971c946a04cafdf122ba0dc286, type: 2}
   birthValue: {x: 7, y: -9, z: 0}
-  platformCount: 20
+  platformCount: 12
   birthWait: 0.5
   startWait: 0
   waveWait: 0.5
@@ -3381,7 +3381,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4462391215832182, guid: e8ec1b0de56e46f47a472d4a3ac30c72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -11.2
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 4462391215832182, guid: e8ec1b0de56e46f47a472d4a3ac30c72, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4205,7 +4205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13124746, y: 0.95000005}
   m_AnchorMax: {x: 0.18625085, y: 0.98200005}
-  m_AnchoredPosition: {x: -0.4000244, y: 0.5}
+  m_AnchoredPosition: {x: 1, y: 0.5}
   m_SizeDelta: {x: -0.5, y: 0.79999924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780511521
@@ -4342,7 +4342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 13, y: 0}
   m_SizeDelta: {x: 81.732, y: 25.145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986436576
