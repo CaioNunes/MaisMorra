@@ -11,7 +11,7 @@ TagManager:
   - Sprite
   - Bullet
   - Music
-  - BackButton
+  - Settings
   layers:
   - Default
   - TransparentFX

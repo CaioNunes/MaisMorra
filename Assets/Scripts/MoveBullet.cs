@@ -17,6 +17,7 @@ public class MoveBullet : MonoBehaviour {
 		if(direction > 0)
             transform.Translate(bullet_speed * Time.deltaTime, 0, 0);
         else
+            
             transform.Translate(-bullet_speed * Time.deltaTime, 0, 0);
 
         if (transform.position.x >= 12f || transform.position.x <= -12f)

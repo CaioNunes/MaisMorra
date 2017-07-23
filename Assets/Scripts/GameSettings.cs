@@ -6,27 +6,21 @@ using UnityEngine.EventSystems;
 
 public class GameSettings : MonoBehaviour
 {
-    private bool fullScreen = true;
+    private bool fullScreen;
     private bool muteItAll = false;
-    private float music = 1f;
+    private float musicVolume = 1f;
     public AudioClip soundSelect;
-
 
     private void Awake()
     {
-        if(FindObjectsOfType<GameSettings>().Length > 1)
-        {
-            DestroyImmediate(this.gameObject);
-        }
+        FullScreen = Screen.fullScreen;        
     }
+
 
     private void Start()
     {
         DontDestroyOnLoad(this);
-
     }
-
-
 
     public bool FullScreen{
         get{
@@ -48,13 +42,13 @@ public class GameSettings : MonoBehaviour
         }
     }
 
-    public float Music{
+    public float MusicVolume{
         get{
-            return music;
+            return musicVolume;
         }
 
         set{
-            music = value;
+            musicVolume = value;
         }
     }
 
