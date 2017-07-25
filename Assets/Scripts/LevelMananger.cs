@@ -12,9 +12,9 @@ public class LevelMananger : MonoBehaviour {
     {
         if (SceneManager.GetActiveScene().name.Equals("PressStart"))
         {
-            if (Input.GetButton("Start"))
+            if (Input.GetButton("StartSurvive"))
             {
-                SceneManager.LoadScene("Start", LoadSceneMode.Single);
+                SceneManager.LoadScene("StartSurvive", LoadSceneMode.Single);
             }
 
         }

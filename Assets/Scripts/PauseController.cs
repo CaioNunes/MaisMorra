@@ -7,6 +7,7 @@ public class PauseController : MonoBehaviour {
     private bool paused = false;
     public string pauseButton;
 
+    
     void Update()
     {
         if (Input.GetButtonDown(pauseButton))

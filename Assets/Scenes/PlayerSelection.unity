@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -183,6 +183,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &85977750
 Transform:
   m_ObjectHideFlags: 0
@@ -232,12 +233,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
+  - {fileID: 21300002, guid: 630d13e23ec701c4fae36881d2eb39b9, type: 3}
   trocaRight: TrocaRight_P4
   trocaLeft: TrocaLeft_P4
 --- !u!212 &149006601
@@ -281,6 +281,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &149006602
 Transform:
   m_ObjectHideFlags: 0
@@ -581,6 +582,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &350096232
 Transform:
   m_ObjectHideFlags: 0
@@ -669,6 +671,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &787115761
 Transform:
   m_ObjectHideFlags: 0
@@ -757,6 +760,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1079802912
 Transform:
   m_ObjectHideFlags: 0
@@ -828,6 +832,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1470627898
 Transform:
   m_ObjectHideFlags: 0
@@ -860,12 +865,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   trocaRight: TrocaRight_P1
   trocaLeft: TrocaLeft_P1
 --- !u!1 &1536983141
@@ -904,12 +907,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
+  - {fileID: 21300002, guid: 630d13e23ec701c4fae36881d2eb39b9, type: 3}
   trocaRight: TrocaRight_P3
   trocaLeft: TrocaLeft_P3
 --- !u!212 &1536983143
@@ -953,6 +955,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1536983144
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,6 +1044,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &1800666604
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,6 +1225,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
 --- !u!4 &2131876831
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,11 +1258,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300000, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
-  - {fileID: 21300002, guid: 5ddbc35d2a67b5641bf60279abf7cb74, type: 3}
+  - {fileID: 21300002, guid: 630d13e23ec701c4fae36881d2eb39b9, type: 3}
   trocaRight: TrocaRight_P2
   trocaLeft: TrocaLeft_P2

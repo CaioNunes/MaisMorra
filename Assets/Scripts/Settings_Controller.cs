@@ -17,32 +17,40 @@ public class Settings_Controller : MonoBehaviour {
 
     public string abrirOptions;    
     public bool optionsIsOpen = false;
-        
-    
+
+
+    private void Awake()
+    {
+        gameSettings = FindObjectOfType<GameManagerController>().GetComponent<GameSettings>();
+    }
+
     private void Start()
     {
-        if (!SceneManager.GetActiveScene().name.Equals("Start"))
-        {
-            buttonsMenu = null;
-        }
+        Screen.fullScreen = fullScreenToggle.isOn = gameSettings.fullScreen;
+        muteItAllToggle.isOn = gameSettings.muteItAll;
+        musicSlider.value = gameSettings.musicVolume;
+
+        
+
+        OnMuteItAll();
 
         panelMenuOptions.SetActive(false);
 
-        gameSettings = FindObjectOfType<GameSettings>();
-        muteItAllToggle.isOn  = gameSettings.MuteItAll;
-        musicSlider.value = gameSettings.MusicVolume;
-                
+
+        if (!SceneManager.GetActiveScene().name.Equals("Start"))
+        {
+            buttonsMenu = null;
+        }        
     }
 
     
     void Update() {              
             
-            musicSource = FindObjectsOfType<AudioSource>();
-            OnMuteItAll();
-            OnFullscreen();
-            OnMusic();
+        musicSource = FindObjectsOfType<AudioSource>();
+        OnMuteItAll();
 
-            if (Input.GetButtonDown(abrirOptions))
+
+        if (Input.GetButtonDown(abrirOptions))
             {
             AbrirMenuOptions();
             }
@@ -51,6 +59,7 @@ public class Settings_Controller : MonoBehaviour {
             {
                 fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
                 musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
+                muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });
             }
     }
      
@@ -82,25 +91,25 @@ public class Settings_Controller : MonoBehaviour {
     }
 
     public void OnFullscreen(){
-        Screen.fullScreen = gameSettings.FullScreen = fullScreenToggle.isOn;
+        //Screen.fullScreen = FindObjectOfType<GameSettings>().fullScreen = fullScreenToggle.isOn;
+        Screen.fullScreen = gameSettings.fullScreen = fullScreenToggle.isOn;
     }
 
     public void OnMuteItAll(){
                
             for (int i = 0; i < musicSource.Length; i++)
             {
-                if (muteItAllToggle.isOn == true)
+                if (gameSettings.muteItAll)
                 {
-                    gameSettings.MuteItAll = true;
-                    musicSource[i].volume = 0 ;
+                 musicSource[i].volume = 0 ;
                 }
                 else
-                {
-                    gameSettings.MuteItAll = false;
-                    musicSource[i].volume = gameSettings.MusicVolume = musicSlider.value;
+                {                
+                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
                 }
                 
-            }                      
+            }
+        gameSettings.muteItAll = muteItAllToggle.isOn;
     }
 
     
@@ -109,8 +118,12 @@ public class Settings_Controller : MonoBehaviour {
         {
             for (int i = 0; i < musicSource.Length; i++)
             {
-                musicSource[i].volume = gameSettings.MusicVolume = musicSlider.value;
+                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
             }
+        }
+        else
+        {
+            gameSettings.musicVolume = musicSlider.value;
         }
         
     }
