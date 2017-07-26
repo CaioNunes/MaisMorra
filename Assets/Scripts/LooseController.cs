@@ -65,9 +65,11 @@ public class LooseController : MonoBehaviour {
         if (playersTieId.Count == 1){
             foreach(MovePlayer spritePLayer in players)
             {
-                spritePLayer.GetComponent<SpriteRenderer>().sprite = spritePLayer.GetComponent<SpriteRenderer>().sprite;
+                //spritePLayer.GetComponent<SpriteRenderer>().sprite = spritePLayer.GetComponent<SpriteRenderer>().sprite;
             }
             SceneManager.LoadScene("Win"+playersTieId[0]);
+            
+            
             
         } else {
             deathmatch = true;

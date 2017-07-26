@@ -13,6 +13,7 @@ public class BlasterAttack : MonoBehaviour {
     private bool isMoveUp = false;
     private bool isMoveDown = true;
     private GameObject bullet_instance;
+    public Transform pontaGanhao;
 
 	// Use this for initialization
 	void Start () {
@@ -28,12 +29,13 @@ public class BlasterAttack : MonoBehaviour {
     void attack() {
         cont += Time.deltaTime;
         if (cont >= delay){
-            bullet_instance = Instantiate(bullet, new Vector2(transform.position.x + 2f, transform.position.y), Quaternion.identity) as GameObject;
+            bullet_instance = Instantiate(bullet, new Vector2(pontaGanhao.position.x + 2f, pontaGanhao.position.y), Quaternion.identity) as GameObject;
 
             if (transform.position.x <= 0){
                 bullet_instance.GetComponent<MoveBullet>().direction = 1f;
             }else {
                 bullet_instance.GetComponent<MoveBullet>().direction = -1f;
+                bullet_instance.GetComponent<SpriteRenderer>().flipX = true;
             }
                 
 

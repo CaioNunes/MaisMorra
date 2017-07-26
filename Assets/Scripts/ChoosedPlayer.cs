@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChoosedPlayer : MonoBehaviour {
 
 	public int id = 1;
 	public bool isOnGame = false;
 	public string select;
+    public AudioSource trocaSound;
 
     public Sprite[] Personagens;//sprite de personagens
     public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
@@ -24,7 +26,7 @@ public class ChoosedPlayer : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () {        
 
         if (telaDeSelecao.selecao)
         {
@@ -47,6 +49,7 @@ public class ChoosedPlayer : MonoBehaviour {
 
         if (Input.GetButtonDown(trocaRight))
         {
+            trocaSound.Play();
 
             if (indicePersonagens == Personagens.Length - 1)
             {
@@ -62,6 +65,8 @@ public class ChoosedPlayer : MonoBehaviour {
         if (Input.GetButtonDown(trocaLeft))
         {
 
+            trocaSound.Play();
+
             if (indicePersonagens == 0)
             {
                 indicePersonagens = Personagens.Length - 1;
@@ -74,6 +79,13 @@ public class ChoosedPlayer : MonoBehaviour {
         }
 
     }
+
+
+   
+        
+    
+
+
 
 
 }

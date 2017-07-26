@@ -8,137 +8,126 @@ public class Settings_Controller : MonoBehaviour {
 
     public Toggle fullScreenToggle;
     public Toggle muteItAllToggle;
-    public Slider musicSlider;
-    public Dropdown resolutionDropdown;
-    
-
+    public Slider musicSlider; 
     public AudioSource[] musicSource;
-    public Resolution[] resolutions;
+
     public GameSettings gameSettings;
+    public GameObject panelMenuOptions;
+    public GameObject buttonsMenu;
 
-    public string abrirOptions;
-    public Canvas menuOptions;
-    public bool isOpen = false;
+    public string abrirOptions;    
+    public bool optionsIsOpen = false;
 
-    private static int instanceNew = 0;
 
-    private void Awake() {
-        instanceNew++;
+    private void Awake()
+    {
+        gameSettings = FindObjectOfType<GameManagerController>().GetComponent<GameSettings>();
     }
 
     private void Start()
     {
-        Debug.Log(instanceNew);
-        if (instanceNew > 1)
-        {
-            //Nothing to do.
-        }
-        else {
-            DontDestroyOnLoad(this);
-        }
-
-        menuOptions.enabled = false;
-
-        gameSettings = new GameSettings();
-        muteItAllToggle.isOn = false;
-        musicSlider.value = 1;
-        
+        Screen.fullScreen = fullScreenToggle.isOn = gameSettings.fullScreen;
+        muteItAllToggle.isOn = gameSettings.muteItAll;
+        musicSlider.value = gameSettings.musicVolume;
 
         
-    }
+
+        OnMuteItAll();
+
+        panelMenuOptions.SetActive(false);
 
 
-
-
-    void Update() {
-        
-        if (SceneManager.GetActiveScene().name == "PlayerSelection")
+        if (!SceneManager.GetActiveScene().name.Equals("Start"))
         {
-            // Se estiver na tela de personagens nao muda settings
-        }
-        else
-        {
-            musicSource = FindObjectsOfType<AudioSource>();
-            OnMuteItAll();
-            OnFullscreen();
-            OnMusic();
-
-
-            if (Input.GetButtonDown(abrirOptions))
-            {
-                if (isOpen)
-                {
-                    menuOptions.enabled = false;
-                    isOpen = false;
-                }
-
-
-                else
-                {
-                    menuOptions.enabled = true;
-                    isOpen = true;
-                }
-
-
-            }
-
-
-
-            if (isOpen)
-            {
-                fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
-                musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
-            }
-        }
-     }
-
-
-
-
-    public void OnFullscreen()
-    {
-        Screen.fullScreen = gameSettings.fullScreen = fullScreenToggle.isOn;
-    }
-
-    public void OnMuteItAll()
-    {
-               
-            for (int i = 0; i < musicSource.Length; i++)
-            {
-                if (muteItAllToggle.isOn)
-                {
-                    musicSource[i].volume = gameSettings.music = 0;
-                }
-                else
-                {
-                musicSource[i].volume = gameSettings.music = musicSlider.value;
-            }
-                
-            }                      
+            buttonsMenu = null;
+        }        
     }
 
     
-    public void OnMusic()
-    {
-        if (!muteItAllToggle.isOn)
+    void Update() {              
+            
+        musicSource = FindObjectsOfType<AudioSource>();
+        OnMuteItAll();
+
+
+        if (Input.GetButtonDown(abrirOptions))
+            {
+            AbrirMenuOptions();
+            }
+
+            if (optionsIsOpen)
+            {
+                fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
+                musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
+                muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });
+            }
+    }
+     
+    public void AbrirMenuOptions(){
+        if (optionsIsOpen)
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Start"))
+            {
+                buttonsMenu.SetActive(true);
+            }
+            
+            panelMenuOptions.SetActive(false);
+            optionsIsOpen = false;                       
+        }
+
+
+        else
+        {
+            if (SceneManager.GetActiveScene().name.Equals("Start"))
+            {
+                buttonsMenu.SetActive(false);
+            }
+            
+            panelMenuOptions.SetActive(true);
+            optionsIsOpen = true;                       
+        }
+
+       
+    }
+
+    public void OnFullscreen(){
+        //Screen.fullScreen = FindObjectOfType<GameSettings>().fullScreen = fullScreenToggle.isOn;
+        Screen.fullScreen = gameSettings.fullScreen = fullScreenToggle.isOn;
+    }
+
+    public void OnMuteItAll(){
+               
+            for (int i = 0; i < musicSource.Length; i++)
+            {
+                if (gameSettings.muteItAll)
+                {
+                 musicSource[i].volume = 0 ;
+                }
+                else
+                {                
+                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
+                }
+                
+            }
+        gameSettings.muteItAll = muteItAllToggle.isOn;
+    }
+
+    
+    public void OnMusic(){
+        if (muteItAllToggle.isOn == false)
         {
             for (int i = 0; i < musicSource.Length; i++)
             {
-                musicSource[i].volume = gameSettings.music = musicSlider.value;
+                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
             }
+        }
+        else
+        {
+            gameSettings.musicVolume = musicSlider.value;
         }
         
     }
-
-        
-    public void SaveChanges()
-    {
-
-    }
-
-    public void LoadSettings()
-    {
-
-    }
+           
+    
     
 }

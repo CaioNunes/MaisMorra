@@ -5,7 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class LevelMananger : MonoBehaviour {
 
-	public void LoadLevel(string name){
+    
+
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name.Equals("PressStart"))
+        {
+            if (Input.GetButton("StartSurvive"))
+            {
+                SceneManager.LoadScene("StartSurvive", LoadSceneMode.Single);
+            }
+
+        }
+    }
+
+
+
+    public void LoadLevel(string name){        
+
 		SceneManager.LoadScene(name, LoadSceneMode.Single);
 	}
 

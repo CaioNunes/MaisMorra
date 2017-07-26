@@ -17,9 +17,8 @@ public class MenuMusicController : MonoBehaviour {
 	void Update () {
         
 
-        if (SceneManager.GetActiveScene().name != "Start" && SceneManager.GetActiveScene().name != "PlayerSelection")
+        if (SceneManager.GetActiveScene().name != "Start" && SceneManager.GetActiveScene().name != "PlayerSelection" && SceneManager.GetActiveScene().name != "PressStart")
         {
-            Debug.Log("Mandei destruir!");
             Destroy(this.gameObject);
         }
 	}
