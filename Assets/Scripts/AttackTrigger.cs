@@ -6,10 +6,10 @@ public class AttackTrigger : MonoBehaviour {
 
      private void OnTriggerStay2D(Collider2D col)
     {
-        //if (col.CompareTag("Player"))
-       // {
+        if (col.CompareTag("Player") && col.name!= gameObject.name)
+        {
             Debug.Log("hit");
-       // }
+        }
     }
 
 }

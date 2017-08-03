@@ -5,30 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class ChoosedPlayer : MonoBehaviour {
 
-	public int id = 1;
+   	public int id = 1;
 	public bool isOnGame = false;
-	public string select;
+    public Sprite selectSprite;
+    
     public AudioSource trocaSound;
 
     public Sprite[] Personagens;//sprite de personagens
     public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
-    public string trocaRight;//Tecla de troca de personagem
-    public string trocaLeft;
+
+    public string select;
+    public string trocaRight;//Tecla de troca de personagem para direita
+    public string trocaLeft;//Tecla de troca de personagem para esquerda
+
+    private ChooserController controller;
     private int indicePersonagens = 0;
 
-    ChooserController telaDeSelecao;
+    
 
 
    
     // Use this for initialization
     void Start () {
-        telaDeSelecao = FindObjectOfType <ChooserController>();
+        controller = FindObjectOfType <ChooserController>();
+        selectSprite = gameObject.GetComponent<SpriteRenderer>().sprite ;
     }
 	
 	// Update is called once per frame
 	void Update () {        
 
-        if (telaDeSelecao.selecao)
+        if (SceneManager.GetActiveScene().Equals("PlayerSelection"))
         {
             TrocaPersonagem();
 
@@ -38,10 +44,14 @@ public class ChoosedPlayer : MonoBehaviour {
         if (Input.GetButtonDown(select))
         {
             isOnGame = true;
-            gameObject.GetComponent<SpriteRenderer>().sprite = PersonagensOnGame[indicePersonagens];          
+            selectSprite = controller.PersonagensOnGame[indicePersonagens];
+            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;         
 
         }
-      
+
+        
+
+
     }
 
 
@@ -51,7 +61,7 @@ public class ChoosedPlayer : MonoBehaviour {
         {
             trocaSound.Play();
 
-            if (indicePersonagens == Personagens.Length - 1)
+            if (indicePersonagens == controller.Personagens.Length - 1)
             {
                 indicePersonagens = 0;
             }
@@ -59,7 +69,8 @@ public class ChoosedPlayer : MonoBehaviour {
             {
                 indicePersonagens++;
             }
-            gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
+            selectSprite = controller.Personagens[indicePersonagens];
+            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;
         }
 
         if (Input.GetButtonDown(trocaLeft))
@@ -69,13 +80,14 @@ public class ChoosedPlayer : MonoBehaviour {
 
             if (indicePersonagens == 0)
             {
-                indicePersonagens = Personagens.Length - 1;
+                indicePersonagens = controller.Personagens.Length - 1;
             }
             else
             {
                 indicePersonagens--;
             }
-            gameObject.GetComponent<SpriteRenderer>().sprite = Personagens[indicePersonagens];
+            selectSprite = controller.Personagens[indicePersonagens];
+            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;
         }
 
     }

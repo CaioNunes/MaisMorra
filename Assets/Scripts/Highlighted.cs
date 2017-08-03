@@ -3,25 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Highlighted : MonoBehaviour, IPointerEnterHandler  {
+public class Highlighted : MonoBehaviour, IPointerEnterHandler {
 
     private AudioSource selectSound;
+    public EventSystem teste ;
 
-    
     private void Start()
     {
         selectSound = FindObjectOfType<GameSettings>().GetComponent<AudioSource>();
         selectSound.clip = FindObjectOfType<GameSettings>().soundSelect;
         selectSound.loop = false;
-        selectSound.playOnAwake = false;
+        selectSound.playOnAwake = false;      
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
            selectSound.Play();
-    }
-
-    
-
+    }    
+     
     
 }

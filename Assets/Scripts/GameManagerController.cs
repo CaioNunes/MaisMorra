@@ -10,10 +10,14 @@ public class GameManagerController : MonoBehaviour {
     
     public List<ChoosedPlayer> players = new List<ChoosedPlayer>();
 
+    public string modSelected;
+
 	// Use this for initialization
 	void Start () {
-
-        DontDestroyOnLoad(this);              
+                
+        DontDestroyOnLoad(this); 
+        
+        
         
 	}
 	
@@ -25,12 +29,12 @@ public class GameManagerController : MonoBehaviour {
             OnPlayerSelectionScene();
         }        
 	}
-
+    
 
     void OnPlayerSelectionScene()
     {
         foreach(ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
-            players.Add(cs);
+            players.Add(cs.GetComponent<ChoosedPlayer>());
             
         }
 

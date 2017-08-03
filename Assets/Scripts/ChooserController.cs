@@ -3,25 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChooserController : MonoBehaviour {
+public class ChooserController : MonoBehaviour {    
 
-    private List<ChoosedPlayer> sprites = new List<ChoosedPlayer>();
+    private GameManagerController gameManager;
     private bool personagemRepetido;
-    public bool selecao ;
+   
     public string retorno;
 	public string start;
     public AudioSource falhaIniciar ;
-    
-	// Use this for initialization
-	void Start () {
 
-        selecao = true;
+    public Sprite[] Personagens;//sprite de personagens
+    public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
 
-        foreach(ChoosedPlayer p in FindObjectsOfType<ChoosedPlayer>()){
-            DontDestroyOnLoad (p);
-            sprites.Add(p);
-        }
+    // Use this for initialization
+    void Start () {      
 
+        gameManager = FindObjectOfType<GameManagerController>().GetComponent<GameManagerController>();
         personagemRepetido = false;
         
     }
@@ -32,21 +29,7 @@ public class ChooserController : MonoBehaviour {
         PersonagemRepetido();
 
         if (Input.GetButtonDown (start)) {
-       
-            if (HaveTwoPlayers() && personagemRepetido == false) {
-
-                foreach (ChoosedPlayer sprite in sprites)
-                {
-                    sprite.GetComponent<SpriteRenderer>().enabled = false;
-                }
-
-                SceneManager.LoadScene ("Game");
-                selecao = false;
-            }
-            else
-            {
-                falhaIniciar.Play();
-            }
+            GameReadyToStart();          
 		}
 
         if (Input.GetButtonDown(retorno)){
@@ -55,10 +38,25 @@ public class ChooserController : MonoBehaviour {
         
 	}
 
+
+    void GameReadyToStart()
+    {
+        if (HaveTwoPlayers() && !personagemRepetido){                      
+
+            SceneManager.LoadScene(gameManager.modSelected);
+        }
+        else
+        {
+            falhaIniciar.Play();
+        }
+    }
+
+
+
     bool HaveTwoPlayers()
     {
         int playersInGame = 0;
-        foreach(ChoosedPlayer player in sprites)
+        foreach(ChoosedPlayer player in gameManager.players)
         {
             if (player.isOnGame)
             {
@@ -81,13 +79,13 @@ public class ChooserController : MonoBehaviour {
     void PersonagemRepetido(){
 
         personagemRepetido = false;
-        for(int i = 0; i < sprites.Count-1; i++)
+        for(int i = 0; i < gameManager.players.Count-1; i++)
         {
-            if (sprites[i].isOnGame)
+            if (gameManager.players[i].isOnGame)
             {
-                for (int j = i + 1; j < sprites.Count; j++)
+                for (int j = i + 1; j < gameManager.players.Count; j++)
                 {
-                    if (sprites[j].GetComponent<SpriteRenderer>().sprite.name == sprites[i].GetComponent<SpriteRenderer>().sprite.name)
+                    if (gameManager.players[j].selectSprite.name.Equals(gameManager.players[i].selectSprite.name))
                     {
                         personagemRepetido = true;
                     }
