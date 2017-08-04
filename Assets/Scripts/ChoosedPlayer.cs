@@ -7,12 +7,7 @@ public class ChoosedPlayer : MonoBehaviour {
 
    	public int id = 1;
 	public bool isOnGame = false;
-    public Sprite selectSprite;
-    
-    public AudioSource trocaSound;
-
-    public Sprite[] Personagens;//sprite de personagens
-    public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
+    public Sprite selectSprite;      
 
     public string select;
     public string trocaRight;//Tecla de troca de personagem para direita
@@ -20,10 +15,6 @@ public class ChoosedPlayer : MonoBehaviour {
 
     private ChooserController controller;
     private int indicePersonagens = 0;
-
-    
-
-
    
     // Use this for initialization
     void Start () {
@@ -34,10 +25,9 @@ public class ChoosedPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {        
 
-        if (SceneManager.GetActiveScene().Equals("PlayerSelection"))
+        if (SceneManager.GetActiveScene().name.Equals("PlayerSelection"))
         {
-            TrocaPersonagem();
-
+            TrocaPersonagem();            
         }     
         
                 
@@ -45,21 +35,16 @@ public class ChoosedPlayer : MonoBehaviour {
         {
             isOnGame = true;
             selectSprite = controller.PersonagensOnGame[indicePersonagens];
-            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;         
-
+            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;
         }
-
-        
-
-
+         
     }
-
 
     void TrocaPersonagem(){
 
         if (Input.GetButtonDown(trocaRight))
         {
-            trocaSound.Play();
+            controller.trocaSound.Play();
 
             if (indicePersonagens == controller.Personagens.Length - 1)
             {
@@ -75,8 +60,7 @@ public class ChoosedPlayer : MonoBehaviour {
 
         if (Input.GetButtonDown(trocaLeft))
         {
-
-            trocaSound.Play();
+            controller.trocaSound.Play();
 
             if (indicePersonagens == 0)
             {

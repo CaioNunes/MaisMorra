@@ -44,18 +44,15 @@ public class BlasterAttack : MonoBehaviour {
     }
 
     void move_blaster(){
-        Debug.Log("Moving blaster");
-
-        if (transform.position.y >= position_min && isMoveDown){
-            Debug.Log("Está descendo");
+        
+        if (transform.position.y >= position_min && isMoveDown){            
             transform.Translate(0, -speed * Time.deltaTime, 0);
         }else {
             isMoveDown = false;
             isMoveUp = true;
         }
 
-        if (transform.position.y <= position_max && isMoveUp){
-            Debug.Log("Está subindo");
+        if (transform.position.y <= position_max && isMoveUp){            
             transform.Translate(0, speed * Time.deltaTime, 0);
         }else {
             isMoveUp = false;

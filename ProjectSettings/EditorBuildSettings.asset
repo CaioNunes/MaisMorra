@@ -12,14 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 28d35ad57b548f1419ac5a0e6f885691
   - enabled: 1
-    path: Assets/Scenes/Options.unity
-    guid: e5749616d036bff47bfb8c4c2242e439
+    path: Assets/Scenes/ModSelection.unity
+    guid: 4b28e63d2a89de8498fea8a33f85b0bd
   - enabled: 1
     path: Assets/Scenes/PlayerSelection.unity
     guid: 6a0db4cf028f7f54590db295d49cca37
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/SurvivalMod.unity
     guid: b78cd353fbf51e84cb548fd95a501ca8
+  - enabled: 1
+    path: Assets/Scenes/BlackOutMod.unity
+    guid: ac3cd2273b3d0fa4fad19a512faa6331
   - enabled: 1
     path: Assets/Scenes/Win1.unity
     guid: 6e3fe91cda0f6914db2712c16f6733e6

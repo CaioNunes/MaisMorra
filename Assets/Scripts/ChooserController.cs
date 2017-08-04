@@ -11,6 +11,7 @@ public class ChooserController : MonoBehaviour {
     public string retorno;
 	public string start;
     public AudioSource falhaIniciar ;
+    public AudioSource trocaSound;
 
     public Sprite[] Personagens;//sprite de personagens
     public Sprite[] PersonagensOnGame;//sprite de confirmação de seleção dos personagens
@@ -19,15 +20,14 @@ public class ChooserController : MonoBehaviour {
     void Start () {      
 
         gameManager = FindObjectOfType<GameManagerController>().GetComponent<GameManagerController>();
+        gameManager.selecaoPersonagem = true;
         personagemRepetido = false;
         
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        PersonagemRepetido();
-
+        
         if (Input.GetButtonDown (start)) {
             GameReadyToStart();          
 		}
@@ -41,9 +41,18 @@ public class ChooserController : MonoBehaviour {
 
     void GameReadyToStart()
     {
-        if (HaveTwoPlayers() && !personagemRepetido){                      
+        PersonagemRepetido();
 
-            SceneManager.LoadScene(gameManager.modSelected);
+        if (HaveTwoPlayers() && !personagemRepetido){
+
+            //SceneManager.LoadScene(gameManager.modSelected);
+            for(int i = 0;i < gameManager.players.Count; i++)
+            {
+                DontDestroyOnLoad(gameManager.players[i]);
+                gameManager.players[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+           
+            SceneManager.LoadScene("SurvivalMod");            
         }
         else
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Settings_Controller : MonoBehaviour {
 
@@ -18,6 +19,7 @@ public class Settings_Controller : MonoBehaviour {
     public string abrirOptions;    
     public bool optionsIsOpen = false;
 
+    public GameObject lastSelectedGameObject;
 
     private void Awake()
     {
@@ -56,7 +58,7 @@ public class Settings_Controller : MonoBehaviour {
             }
 
             if (optionsIsOpen)
-            {
+            {  
                 fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
                 musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
                 muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });
@@ -72,12 +74,17 @@ public class Settings_Controller : MonoBehaviour {
             }
             
             panelMenuOptions.SetActive(false);
-            optionsIsOpen = false;                       
+            optionsIsOpen = false;
+
+            EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
         }
 
 
         else
         {
+            lastSelectedGameObject = EventSystem.current.currentSelectedGameObject;
+            fullScreenToggle.GetComponent<Selectable>().Select();
+
             if (SceneManager.GetActiveScene().name.Equals("Start"))
             {
                 buttonsMenu.SetActive(false);

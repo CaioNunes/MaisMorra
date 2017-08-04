@@ -4,21 +4,36 @@ using UnityEngine;
 
 public class BornController : MonoBehaviour{
 
-    List <ChoosedPlayer> player = new List<ChoosedPlayer>();
+    //List <ChoosedPlayer> player = new List<ChoosedPlayer>();
+    public List<ChoosedPlayer> player = new List<ChoosedPlayer>();
+    
     public Sprite[] personagens;
     public GameObject[] prefabPlayer;
     public RuntimeAnimatorController[] animatorPlayer;
 
 
+    private void Awake()
+    {
+        player.Clear();
+        foreach (ChoosedPlayer ok in FindObjectOfType<GameManagerController>().GetComponent<GameManagerController>().players)
+        {
+            player.Add(ok);
+
+        }       
+    }
+
 
     // Use this for initialization
     void Start(){
 
-        player.Clear();
-        foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
-            player.Add(cs);
-        }
-        player.Sort((IComparer<ChoosedPlayer>)new sort());
+
+        
+
+       // player.Clear();
+        //foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
+        //    player.Add(cs);
+       // }
+        //player.Sort((IComparer<ChoosedPlayer>)new sort());
         InstantiatePlayer();
     }
 		
@@ -32,8 +47,8 @@ public class BornController : MonoBehaviour{
         for (int i = 0; i < player.Count; i++){
             
             if (player[i].isOnGame){
-                
-                string spriteName = player[i].GetComponent<SpriteRenderer>().sprite.name;
+
+                string spriteName = player[i].selectSprite.name;
                 
                 switch (spriteName){
                     case "mago_1":

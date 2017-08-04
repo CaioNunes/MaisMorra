@@ -9,36 +9,51 @@ using UnityEngine.SceneManagement;
 public class GameManagerController : MonoBehaviour {    
     
     public List<ChoosedPlayer> players = new List<ChoosedPlayer>();
-
     public string modSelected;
 
+    public bool selecaoPersonagem = true;
+
+    private GameObject lastSelectedGameObject;
 	// Use this for initialization
 	void Start () {
                 
-        DontDestroyOnLoad(this); 
-        
-        
+        DontDestroyOnLoad(this);
         
 	}
 	
 	// Update is called once per frame
 	void Update () {
-       
-        if (SceneManager.GetActiveScene().name.Equals("PlayerSelection") && players.Count < 1)
+        
+        if(EventSystem.current != null)
         {
-            OnPlayerSelectionScene();
+            if (EventSystem.current.currentSelectedGameObject != null)
+            {
+                lastSelectedGameObject = EventSystem.current.currentSelectedGameObject;
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
+            }
+        }
+        
+
+        if (SceneManager.GetActiveScene().name.Equals("PlayerSelection") && selecaoPersonagem)
+        {         
+                OnPlayerSelectionScene();           
         }        
+        
 	}
     
 
     void OnPlayerSelectionScene()
     {
+        players.Clear();
         foreach(ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
             players.Add(cs.GetComponent<ChoosedPlayer>());
             
         }
-
-        players.Sort((IComparer<ChoosedPlayer>)new sort());        
+        players.Sort((IComparer<ChoosedPlayer>)new sort());
+        selecaoPersonagem = false;
     }
 
     private class sort : IComparer<ChoosedPlayer>
