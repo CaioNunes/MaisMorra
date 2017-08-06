@@ -4,30 +4,17 @@ using UnityEngine;
 
 public class LightsTest : MonoBehaviour {
 
-    Light illumination;
+    public Light illumination;
     bool isOn = false;
-    public string turnOn;
+    public int id;
 
 	// Use this for initialization
 	void Start () {
-        illumination = GetComponentInChildren<Light>();
-        illumination.enabled = false;
+        // illumination = GetComponentInChildren<Light>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown(turnOn)) {
-            if (isOn)
-            {
-                illumination.enabled = false;
-                isOn = false;
-            }
-            else
-            {
-                illumination.enabled = true;
-                isOn = true;
-            }
-                
-        }
+
 	}
 }
