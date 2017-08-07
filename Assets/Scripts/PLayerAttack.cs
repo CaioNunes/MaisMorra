@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLayerAttack : MonoBehaviour {
+public class PlayerAttack : MonoBehaviour {
 
     private float timmerAttackDuration = 0;
     private float timmerAttack = 0;
     private bool attacking = false;
-
+   
     public float attackDuration;
     public float attackCD;    
     public string punch;
-
-    public Collider2D attackTrigger;
+    
     private Animator anim;
 
 
     private void Awake()
     {
-        anim = gameObject.GetComponent<Animator>();
-        //attackTrigger.enabled = false;
+        anim = gameObject.GetComponent<Animator>(); 
     }
 
     // Use this for initialization
@@ -30,44 +28,52 @@ public class PLayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        if (Input.GetButtonDown(punch) && !attacking)
+        if (Input.GetButtonDown(punch) && timmerAttack <= 0)
         {
-            attacking = true;
-            attackTrigger.enabled = true;
+            attacking = true;            
             timmerAttack = attackCD;
-            timmerAttackDuration = attackDuration;
-
+            timmerAttackDuration = attackDuration;            
         }
 
-        if (attacking)
-        {
-            AttackDuration();
-            AttackCD();            
+        if (attacking){
+            TimmerAttack();
         }
-
-       
-
-	}
-
-    void AttackDuration()
-    {     
-        if(timmerAttackDuration > 0)
-        {
-            timmerAttackDuration -= Time.deltaTime;                        
-        }else{            
-            //attackTrigger.enabled = false;
+        else{
+            AttackCD();
         }
     }
 
-    void AttackCD()
-    {        
-        if (timmerAttack > 0)
+    void TimmerAttack()
+    {
+        if (timmerAttackDuration > 0)
         {
-            timmerAttack -= Time.deltaTime;            
+            timmerAttackDuration -= Time.deltaTime;
         }
         else
-        {            
-            attacking = false;
+        {
+            attacking = false;            
         }
+    }
+
+
+    void AttackCD()
+    {
+        if (timmerAttack > 0){
+            timmerAttack -= Time.deltaTime;            
+        }        
+    }  
+    
+    void OnHitPlayer(GameObject player)
+    {
+        if (attacking)
+        {
+            player.SendMessage("OnHitByPlayer");
+        }
+        
+    }
+
+    void OnHitByPlayer()
+    {
+        Debug.Log("Morri!!");
     }
 }

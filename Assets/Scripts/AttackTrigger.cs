@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackTrigger : MonoBehaviour {
+public class AttackTrigger : MonoBehaviour {    
 
-     private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (col.CompareTag("Player") && col.name!= gameObject.name)
-        {
-            Debug.Log("hit");
-        }
+        if (other.CompareTag("Player") && other.gameObject != gameObject){
+            Debug.Log("Dentro do colisor");
+            gameObject.SendMessageUpwards("OnHitPlayer",other.gameObject);
+        }             
     }
 
 }
