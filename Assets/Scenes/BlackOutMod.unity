@@ -1225,7 +1225,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897982172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9, y: -4.1, z: 0.91}
+  m_LocalPosition: {x: 0.05, y: -4.1, z: 0.91}
   m_LocalScale: {x: 7.692798, y: 4.345996, z: 1.4021708}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1428,6 +1428,11 @@ Prefab:
     - target: {fileID: 1086025444078274, guid: 9a2a5360583aaf84fbf224ea25a3772a, type: 2}
       propertyPath: m_Name
       value: player1_blackout
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753667292865406, guid: 9a2a5360583aaf84fbf224ea25a3772a,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a2a5360583aaf84fbf224ea25a3772a, type: 2}
