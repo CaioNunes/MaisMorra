@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Highlighted : MonoBehaviour, IPointerEnterHandler {
+public class Highlighted : MonoBehaviour {
 
-    private AudioSource selectSound;
-    public EventSystem teste ;
+    private AudioSource selectSound;    
 
     private void Start()
     {
@@ -17,7 +16,7 @@ public class Highlighted : MonoBehaviour, IPointerEnterHandler {
 
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnSelectd()
     {
            selectSound.Play();
     }    

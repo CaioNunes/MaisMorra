@@ -52,7 +52,7 @@ public class ChooserController : MonoBehaviour {
                 gameManager.players[i].GetComponent<SpriteRenderer>().enabled = false;
             }
            
-            SceneManager.LoadScene("SurvivalMod");            
+            SceneManager.LoadScene(gameManager.modSelected);            
         }
         else
         {

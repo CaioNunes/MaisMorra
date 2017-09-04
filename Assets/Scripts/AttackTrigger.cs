@@ -6,8 +6,7 @@ public class AttackTrigger : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && other.gameObject != gameObject){
-            Debug.Log("Dentro do colisor");
+        if (other.CompareTag("Player") && other.gameObject != gameObject){           
             gameObject.SendMessageUpwards("OnHitPlayer",other.gameObject);
         }             
     }

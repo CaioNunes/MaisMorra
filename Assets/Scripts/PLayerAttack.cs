@@ -74,6 +74,6 @@ public class PlayerAttack : MonoBehaviour {
 
     void OnHitByPlayer()
     {
-        Debug.Log("Morri!!");
+        Destroy(gameObject);        
     }
 }

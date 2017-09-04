@@ -4,20 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
-public class LevelMananger : MonoBehaviour {
-
+public class LevelMananger : MonoBehaviour {   
     
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().name.Equals("PressStart"))
-        {
-            OnPressStartScene();
-        }
-        
-        
-    }
-
-
 
     public void LoadLevel(string name){        
 
@@ -28,21 +16,14 @@ public class LevelMananger : MonoBehaviour {
 		Application.Quit ();
 	}
 
-    void OnPressStartScene()
-    {                
-            if (Input.GetButton("Start"))
-            {
-                SceneManager.LoadScene("Start", LoadSceneMode.Single);
-            }        
+    public void Retry()
+    {
+        LoadLevel(FindObjectOfType<GameManagerController>().modSelected);
     }
 
-    public void SoundButtonsHilighted()
-    {
-        AudioSource sound = FindObjectOfType<GameManagerController>().GetComponent<AudioSource>();
-        sound.loop = false;
-        sound.playOnAwake = false;
-        sound.Play();
-    }
+    
+
+    
 
 	
 }
