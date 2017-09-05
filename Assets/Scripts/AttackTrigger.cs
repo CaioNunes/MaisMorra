@@ -8,7 +8,8 @@ public class AttackTrigger : MonoBehaviour {
     {
         if (other.CompareTag("Player") && other.gameObject != gameObject){           
             gameObject.SendMessageUpwards("OnHitPlayer",other.gameObject);
+            
         }             
     }
-
+    
 }

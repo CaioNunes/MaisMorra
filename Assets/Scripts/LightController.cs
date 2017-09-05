@@ -41,8 +41,7 @@ public class LightController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (player_was_dead == true)
-        {
-            Debug.Log("Morreu !");
+        {            
             recalibrateLights();
             player_was_dead = false;
         }

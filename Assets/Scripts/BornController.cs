@@ -25,15 +25,6 @@ public class BornController : MonoBehaviour{
 
     // Use this for initialization
     void Start(){
-
-
-        
-
-       // player.Clear();
-        //foreach (ChoosedPlayer cs in FindObjectsOfType<ChoosedPlayer>()){
-        //    player.Add(cs);
-       // }
-        //player.Sort((IComparer<ChoosedPlayer>)new sort());
         InstantiatePlayer();
     }
 		

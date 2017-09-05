@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour {
     private float timmerAttackDuration = 0;
     private float timmerAttack = 0;
     private bool attacking = false;
+    
    
     public float attackDuration;
     public float attackCD;    
@@ -63,19 +64,21 @@ public class PlayerAttack : MonoBehaviour {
         }        
     }  
     
-    void OnHitPlayer(GameObject player)
+    public void OnHitPlayer(GameObject player)
     {
         if (attacking)
         {
-            player.SendMessage("OnHitByPlayer");
+            player.SendMessage("OnHitByPlayer");            
         }
         
     }
 
-    void OnHitByPlayer()
+    public void OnHitByPlayer()
     {
+        gameObject.GetComponent<MovePlayer>().isAlive = false;
         LightController p = FindObjectOfType<LightController>();
         p.player_was_dead = true;
+        gameObject.GetComponent<MovePlayer>().isAlive = false;
         Destroy(gameObject);        
     }
 }

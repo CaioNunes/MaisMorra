@@ -110,7 +110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4668527412898538}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4273204718579660
 Transform:
@@ -123,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1.9644432, y: 2.1382825, z: 1}
   m_Children: []
   m_Father: {fileID: 4668527412898538}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4668527412898538
 Transform:
@@ -135,10 +135,10 @@ Transform:
   m_LocalPosition: {x: 3.8, y: -6.03, z: -0.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4060975804430480}
   - {fileID: 4860547919513224}
   - {fileID: 4273204718579660}
   - {fileID: 4862571864951450}
-  - {fileID: 4060975804430480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4668527412898538}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4862571864951450
 Transform:
@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4668527412898538}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50734619373157586
 Rigidbody2D:
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c544160921adb4bb4a0906a11c4b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDuration: 0.5
+  attackDuration: 1
   attackCD: 2
   punch: Punch_P2
 --- !u!114 &114610677271625566
