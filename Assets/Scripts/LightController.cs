@@ -8,18 +8,21 @@ public class LightController : MonoBehaviour {
     List<MovePlayer> inGame = new List<MovePlayer>();
     public float light_timer = 0f;
     private int atual_player_lighted = 0;
+    public bool player_was_dead = false;
 
-	// Use this for initialization
+    // Use this for initialization
 
-	void Start () {
+    void recalibrateLights() {
         players.Clear();
         inGame.Clear();
 
-        foreach (MovePlayer playerInGame in FindObjectsOfType<MovePlayer>()) {
+        foreach (MovePlayer playerInGame in FindObjectsOfType<MovePlayer>())
+        {
             inGame.Add(playerInGame);
         }
 
-        foreach (LightsTest player in FindObjectsOfType<LightsTest>()) {
+        foreach (LightsTest player in FindObjectsOfType<LightsTest>())
+        {
             players.Add(player);
             player.illumination.enabled = false;
         }
@@ -27,13 +30,24 @@ public class LightController : MonoBehaviour {
         players.Sort(delegate (LightsTest a, LightsTest b) {
             return (a.id).CompareTo(b.id);
         });
-        //players.Sort();
+    }
 
+    void Start () {
+
+        recalibrateLights();
         players[0].illumination.enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (player_was_dead == true)
+        {
+            Debug.Log("Morreu !");
+            recalibrateLights();
+            player_was_dead = false;
+        }
+
+        //recalibrateLights();
         light_timer += Time.deltaTime;
 
         if (light_timer >= 3f) {
@@ -49,6 +63,7 @@ public class LightController : MonoBehaviour {
 
             players[atual_player_lighted].illumination.enabled = true;
         }
+
 	}
 
 }

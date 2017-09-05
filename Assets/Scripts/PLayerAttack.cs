@@ -74,6 +74,8 @@ public class PlayerAttack : MonoBehaviour {
 
     void OnHitByPlayer()
     {
+        LightController p = FindObjectOfType<LightController>();
+        p.player_was_dead = true;
         Destroy(gameObject);        
     }
 }
