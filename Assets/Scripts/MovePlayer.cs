@@ -39,8 +39,9 @@ public class MovePlayer : MonoBehaviour {
 		/// =========================== Movimentação ===============================
 
 		/// =========================== Pulo ================================
-		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));  
-		handleHorizontalMovimentation ();
+		estaNoSolo = Physics2D.OverlapCircle (testSolo.transform.position, 0.1f, 1 << LayerMask.NameToLayer ("Platform"));
+        anim.SetBool("ground", estaNoSolo);
+        handleHorizontalMovimentation ();
 		handleJumpMovimentation();
 
 		// =================== Dash =========================
