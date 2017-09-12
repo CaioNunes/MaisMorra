@@ -437,10 +437,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300000, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300000, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
+  - {fileID: 21300000, guid: 351891e4e0d2d4d45a53d881ce2c5478, type: 3}
   PersonagensOnGame:
   - {fileID: 21300002, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
   - {fileID: 21300002, guid: 84e78bcb94f7caa49bfa890f190874c8, type: 3}
   - {fileID: 21300002, guid: 0bac037f933b6d04f8457fa3617a3122, type: 3}
+  - {fileID: 21300004, guid: 0d16fc68495d0a94f8720594b798b540, type: 3}
 --- !u!1 &172905732
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +819,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 422dfbc7d69764d4693accdfe72964af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 351891e4e0d2d4d45a53d881ce2c5478, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -833,8 +835,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470627896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.14, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.26, y: 0.43, z: 0}
+  m_LocalScale: {x: 0.04286282, y: 0.04286282, z: 0.8572564}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

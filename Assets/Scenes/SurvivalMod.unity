@@ -382,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -250}
+  m_AnchoredPosition: {x: 399.99997, y: -250}
   m_SizeDelta: {x: 449, y: 665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &79758845
@@ -3075,6 +3075,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4360507133352142, guid: edb564de4cfcf3045aaf3b58b98870d2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3111,6 +3116,11 @@ Prefab:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[4]
+      value: 
+      objectReference: {fileID: 9100000, guid: cf927c7c053d4024b83c5a5948d83719, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb564de4cfcf3045aaf3b58b98870d2, type: 2}
   m_IsPrefabParent: 0
