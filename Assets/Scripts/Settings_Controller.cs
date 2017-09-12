@@ -21,6 +21,11 @@ public class Settings_Controller : MonoBehaviour {
 
     public GameObject lastSelectedGameObject;
 
+    private Sprite unSlectScrennButton;
+    private Sprite unSlectMusicButton;
+    public GameObject screenButton;
+    public GameObject musicButton;
+
     private void Awake()
     {
         gameSettings = FindObjectOfType<GameManagerController>().GetComponent<GameSettings>();
@@ -32,13 +37,13 @@ public class Settings_Controller : MonoBehaviour {
         muteItAllToggle.isOn = gameSettings.muteItAll;
         musicSlider.value = gameSettings.musicVolume;
 
-        
+        unSlectScrennButton = screenButton.GetComponent<Image>().sprite;
+        unSlectMusicButton = musicButton.GetComponent<Image>().sprite;
 
         OnMuteItAll();
 
         panelMenuOptions.SetActive(false);
-
-
+        
         if (!SceneManager.GetActiveScene().name.Equals("Start"))
         {
             buttonsMenu = null;
@@ -61,7 +66,24 @@ public class Settings_Controller : MonoBehaviour {
             {  
                 fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
                 musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
-                muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });
+                muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });                
+
+                if (EventSystem.current.currentSelectedGameObject.Equals(fullScreenToggle.gameObject))
+                {
+                    screenButton.GetComponent<Image>().sprite = screenButton.GetComponent<Selectable>().spriteState.highlightedSprite;
+                }
+                else
+                {
+                    screenButton.GetComponent<Image>().sprite = unSlectScrennButton;
+                }
+                if (EventSystem.current.currentSelectedGameObject.Equals(musicSlider.gameObject))
+                {
+                    musicButton.GetComponent<Image>().sprite = musicButton.GetComponent<Selectable>().spriteState.highlightedSprite;
+                }
+                else
+                {
+                    musicButton.GetComponent<Image>().sprite = unSlectMusicButton;
+                }
             }
     }
      

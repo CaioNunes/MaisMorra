@@ -32,9 +32,9 @@ public class ChooserController : MonoBehaviour {
             GameReadyToStart();          
 		}
 
-        if (Input.GetButtonDown(retorno)){
-            SceneManager.LoadScene("Start");
-        }
+        //if (Input.GetButtonDown(retorno)){
+        //    SceneManager.LoadScene("Start");
+        //}
         
 	}
 

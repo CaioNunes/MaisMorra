@@ -276,7 +276,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5876653}
 --- !u!1 &16882173
 GameObject:
@@ -440,7 +440,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 633121787}
   toggleTransition: 0
   graphic: {fileID: 1713183769}
@@ -738,7 +738,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 231899626}
 --- !u!222 &231899625
 CanvasRenderer:
@@ -1170,6 +1170,8 @@ MonoBehaviour:
   abrirOptions: Start
   optionsIsOpen: 0
   lastSelectedGameObject: {fileID: 0}
+  screenButton: {fileID: 231899622}
+  musicButton: {fileID: 5876651}
 --- !u!1 &1033086368
 GameObject:
   m_ObjectHideFlags: 0

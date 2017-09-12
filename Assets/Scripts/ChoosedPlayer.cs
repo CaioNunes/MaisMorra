@@ -15,9 +15,11 @@ public class ChoosedPlayer : MonoBehaviour {
 
     private ChooserController controller;
     private int indicePersonagens = 0;
+    private string deselect ;
    
     // Use this for initialization
     void Start () {
+        deselect = "Dash_P" + id;
         controller = FindObjectOfType <ChooserController>();
         selectSprite = gameObject.GetComponent<SpriteRenderer>().sprite ;
     }
@@ -28,7 +30,13 @@ public class ChoosedPlayer : MonoBehaviour {
         if (SceneManager.GetActiveScene().name.Equals("PlayerSelection"))
         {
             TrocaPersonagem();            
-        }     
+        }
+
+        if (Input.GetButtonDown(deselect) && isOnGame)
+        {
+            selectSprite = controller.Personagens[indicePersonagens];
+            isOnGame = false;
+        }
         
                 
         if (Input.GetButtonDown(select))
@@ -42,7 +50,7 @@ public class ChoosedPlayer : MonoBehaviour {
 
     void TrocaPersonagem(){
 
-        if (Input.GetButtonDown(trocaRight))
+        if (Input.GetButtonDown(trocaRight) && !isOnGame)
         {
             controller.trocaSound.Play();
 
@@ -58,7 +66,7 @@ public class ChoosedPlayer : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;
         }
 
-        if (Input.GetButtonDown(trocaLeft))
+        if (Input.GetButtonDown(trocaLeft) && !isOnGame)
         {
             controller.trocaSound.Play();
 
