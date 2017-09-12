@@ -30,6 +30,8 @@ public class LightController : MonoBehaviour {
         players.Sort(delegate (LightsTest a, LightsTest b) {
             return (a.id).CompareTo(b.id);
         });
+
+        atual_player_lighted = 0;
     }
 
     void Start () {
