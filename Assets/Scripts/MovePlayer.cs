@@ -51,7 +51,7 @@ public class MovePlayer : MonoBehaviour {
 
 	//Handles Horizontal input and moves player
 	public void handleHorizontalMovimentation(){
-		float moveHorizontal = Input.GetAxis (horizontalCtrl);
+		float moveHorizontal = Input.GetAxisRaw (horizontalCtrl);
 		anim.SetFloat("move", Mathf.Abs(moveHorizontal));
 
 		if (moveHorizontal < 0 && !faceRight) {
@@ -78,6 +78,7 @@ public class MovePlayer : MonoBehaviour {
 		
 		if (Input.GetButtonDown (jump)) {
 			if (canJump) {
+                //anim.Play("Blend Tree JUMP");
 				AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().jump, transform.position);
 				rd2.velocity = new Vector2(rd2.velocity.x, 0);
 				rd2.AddForce (new Vector2(0, jumpForce));
