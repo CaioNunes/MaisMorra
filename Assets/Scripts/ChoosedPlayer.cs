@@ -32,11 +32,23 @@ public class ChoosedPlayer : MonoBehaviour {
             TrocaPersonagem();            
         }
 
-        if (Input.GetButtonDown(deselect) && isOnGame)
+        if (Input.GetButtonDown(deselect))
         {
-            selectSprite = controller.Personagens[indicePersonagens];
-            isOnGame = false;
+            if (isOnGame)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = controller.Personagens[indicePersonagens];
+                isOnGame = false;
+            }
+            else
+            {
+                if(id == 1)
+                {
+                    SceneManager.LoadScene("ModSelection");
+                }
+            }
+            
         }
+        
         
                 
         if (Input.GetButtonDown(select))

@@ -10,6 +10,7 @@ public class ModSelection : MonoBehaviour {
     public string description;
     public Sprite title;
     public Sprite image;
+    public bool status;
     
     public GameObject onSelectImage;
     

@@ -7,8 +7,7 @@ public class ChooserController : MonoBehaviour {
 
     private GameManagerController gameManager;
     private bool personagemRepetido;
-   
-    public string retorno;
+
 	public string start;
     public AudioSource falhaIniciar ;
     public AudioSource trocaSound;
@@ -30,12 +29,7 @@ public class ChooserController : MonoBehaviour {
         
         if (Input.GetButtonDown (start)) {
             GameReadyToStart();          
-		}
-
-        //if (Input.GetButtonDown(retorno)){
-        //    SceneManager.LoadScene("Start");
-        //}
-        
+		}       
 	}
 
 

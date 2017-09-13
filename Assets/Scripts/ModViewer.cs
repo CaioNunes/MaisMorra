@@ -39,8 +39,11 @@ public class ModViewer : MonoBehaviour {
     private void OnSelectMod()
     {
         gameManager = FindObjectOfType<GameManagerController>();
-        gameManager.modSelected = EventSystem.current.currentSelectedGameObject.name;
-        LevelMananger loadLevel = new LevelMananger();
-        loadLevel.LoadLevel("PlayerSelection");
+        if (mod.status)
+        {
+            gameManager.modSelected = EventSystem.current.currentSelectedGameObject.name;
+            LevelMananger loadLevel = new LevelMananger();
+            loadLevel.LoadLevel("PlayerSelection");
+        }        
     }
 }
