@@ -7,7 +7,7 @@ public class LightController : MonoBehaviour {
     List<LightsTest> players = new List<LightsTest>();
     List<MovePlayer> inGame = new List<MovePlayer>();
     public float light_timer = 0f;
-    private int atual_player_lighted = 0;
+    public int atual_player_lighted = 0;
     public bool player_was_dead = false;
 
     // Use this for initialization

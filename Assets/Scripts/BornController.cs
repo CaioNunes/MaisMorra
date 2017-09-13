@@ -42,41 +42,44 @@ public class BornController : MonoBehaviour{
                 string spriteName = player[i].selectSprite.name;
                 
                 switch (spriteName){
-                    case "mago_1":
+                    case "TucanIDDLE3":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[0];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[0];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
-                    case "ovelha_1":
+                    case "VisorIDDLE3":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[1];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[1];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
-                    case "peixe_1":
+                    case "RingPinkIDDLE3":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[2];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[2];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
-                    case "Respiracao_verdeM_0":
+                    case "RingBlueIDDLE3":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[3];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[3];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
-                    case "Iddle_Tucan":
+                    case "MonkeyIDDLE3":
                         prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[4];
                         prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[4];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
                         break;
 
-                    default:
-                        Debug.Log("Caso padrão");
-                        prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[0];
-                        prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[0];
+                    case "FrogIDDLE3":
+                        prefabPlayer[i].GetComponent<SpriteRenderer>().sprite = personagens[5];
+                        prefabPlayer[i].GetComponent<Animator>().runtimeAnimatorController = animatorPlayer[5];
                         Instantiate(prefabPlayer[i], prefabPlayer[i].transform.position, Quaternion.identity);
+                        break;
+
+                    default:
+                        Debug.Log("Não foi identificado nenhum prefab ! Por favor, verifique os nomes !");
                         break;
 
                 }

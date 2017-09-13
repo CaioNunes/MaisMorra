@@ -14,11 +14,15 @@ public class PlayerAttack : MonoBehaviour {
     public string punch;
     
     private Animator anim;
+    private LightsTest t;
 
+    LightController lc;
 
     private void Awake()
     {
-        anim = gameObject.GetComponent<Animator>(); 
+        anim = gameObject.GetComponent<Animator>();
+        t = gameObject.GetComponent<LightsTest>();
+        lc = GameObject.FindObjectOfType<LightController>();
     }
 
     // Use this for initialization
@@ -31,12 +35,15 @@ public class PlayerAttack : MonoBehaviour {
         
         if (Input.GetButtonDown(punch) && timmerAttack <= 0)
         {
+            anim.Play("punch");
             attacking = true;            
             timmerAttack = attackCD;
-            timmerAttackDuration = attackDuration;            
+            timmerAttackDuration = attackDuration;
         }
 
         if (attacking){
+
+            t.illumination.enabled = true;
             TimmerAttack();
         }
         else{
@@ -52,7 +59,15 @@ public class PlayerAttack : MonoBehaviour {
         }
         else
         {
-            attacking = false;            
+            attacking = false;
+            if ((lc.atual_player_lighted + 1 ) == t.id )
+            {
+
+            }
+            else {
+                t.illumination.enabled = false;
+            }
+            
         }
     }
 

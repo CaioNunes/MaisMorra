@@ -3001,12 +3001,12 @@ Prefab:
     - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
         type: 2}
       propertyPath: personagens.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
         type: 2}
       propertyPath: animatorPlayer.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4360507133352142, guid: edb564de4cfcf3045aaf3b58b98870d2, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3048,18 +3048,91 @@ Prefab:
         type: 2}
       propertyPath: animatorPlayer.Array.data[4]
       value: 
-      objectReference: {fileID: 9100000, guid: cf927c7c053d4024b83c5a5948d83719, type: 2}
+      objectReference: {fileID: 9100000, guid: 294d7aba97384d541ab61d51bec669cb, type: 2}
     - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
         type: 2}
       propertyPath: personagens.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 0d16fc68495d0a94f8720594b798b540,
+      objectReference: {fileID: 21300000, guid: 4a2b25bde1e4c8f489932146def87f38,
         type: 3}
     - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
         type: 2}
       propertyPath: prefabPlayer.Array.data[0]
       value: 
       objectReference: {fileID: 1630932884619452, guid: 44076656116d47042b25381e7de15582,
+        type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: personagens.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 290e8824275bc1640917d73fa45cdb98,
+        type: 3}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[5]
+      value: 
+      objectReference: {fileID: 9100000, guid: cf927c7c053d4024b83c5a5948d83719, type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: personagens.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5846db1ebe3712845b5467464cf7ce05,
+        type: 3}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: personagens.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: e75abadbeeed22b409929862e4a830fe,
+        type: 3}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: personagens.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 23c4e4e42acaddb4f977331bc8f0ac33,
+        type: 3}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: personagens.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ea3284625ef0a14694dd0e2ab7e6456,
+        type: 3}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[0]
+      value: 
+      objectReference: {fileID: 9100000, guid: bb7f51ae39be71249a719d2bfc441d0b, type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 9100000, guid: ac733a611aa013f45b545b92c8ee6f9d, type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 9100000, guid: 412e5c1dd301f694d8717625b92bfe85, type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: animatorPlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a80eb7aadce70d48a520d607ee50499, type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: prefabPlayer.Array.data[1]
+      value: 
+      objectReference: {fileID: 1630932884619452, guid: 255bce2dc62d99a419d3dc3568a253fb,
+        type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: prefabPlayer.Array.data[2]
+      value: 
+      objectReference: {fileID: 1630932884619452, guid: f7c30b9feefd24645b93ebd43a62407d,
+        type: 2}
+    - target: {fileID: 114112832595476744, guid: edb564de4cfcf3045aaf3b58b98870d2,
+        type: 2}
+      propertyPath: prefabPlayer.Array.data[3]
+      value: 
+      objectReference: {fileID: 1630932884619452, guid: 02a5ab9caa77b334383f4dbd3a1fd997,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edb564de4cfcf3045aaf3b58b98870d2, type: 2}
@@ -3328,7 +3401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400.18738, y: 280.61475}
+  m_AnchoredPosition: {x: 400.18762, y: 280.61475}
   m_SizeDelta: {x: 449, y: 665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1366374188

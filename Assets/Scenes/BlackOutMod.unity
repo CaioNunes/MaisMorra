@@ -142,7 +142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400.18738, y: 273.88715}
+  m_AnchoredPosition: {x: 400.18744, y: 273.88715}
   m_SizeDelta: {x: 449, y: 665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3353485
@@ -337,20 +337,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: []
   personagens:
-  - {fileID: 21300000, guid: d3ec8e76ad87f894d96382307d9c1787, type: 3}
-  - {fileID: 21300000, guid: d8c62fab1a8a1794b9c92bdc64c689c1, type: 3}
-  - {fileID: 21300000, guid: bd53252c7e65fe049ba22b76f1032462, type: 3}
-  - {fileID: 21300000, guid: c7ef7bb84ec34dc41bd28114dcc912d5, type: 3}
+  - {fileID: 21300000, guid: 5846db1ebe3712845b5467464cf7ce05, type: 3}
+  - {fileID: 21300000, guid: e75abadbeeed22b409929862e4a830fe, type: 3}
+  - {fileID: 21300000, guid: 23c4e4e42acaddb4f977331bc8f0ac33, type: 3}
+  - {fileID: 21300000, guid: 5ea3284625ef0a14694dd0e2ab7e6456, type: 3}
+  - {fileID: 21300000, guid: 4a2b25bde1e4c8f489932146def87f38, type: 3}
+  - {fileID: 21300000, guid: 290e8824275bc1640917d73fa45cdb98, type: 3}
   prefabPlayer:
   - {fileID: 1086025444078274, guid: 9a2a5360583aaf84fbf224ea25a3772a, type: 2}
-  - {fileID: 1072954804585830, guid: 8b1a21bc043099f4b836d3cef8655300, type: 2}
-  - {fileID: 1086025444078274, guid: ecbfb268bf352b046ad3087525e526f7, type: 2}
-  - {fileID: 1072954804585830, guid: 1f09e9a2614201843b53c3b6955b1605, type: 2}
+  - {fileID: 1086025444078274, guid: 9242a52720899a1428fca4394dd13632, type: 2}
+  - {fileID: 1086025444078274, guid: fd8d30eae0c2bad4882a195f07b0b758, type: 2}
+  - {fileID: 1086025444078274, guid: fc4ecfe9a0e26b142815396a1e0a520c, type: 2}
   animatorPlayer:
-  - {fileID: 9100000, guid: f6cfc7a5ca5d826449535f371ecc83da, type: 2}
-  - {fileID: 9100000, guid: ed14bf2379148aa4f9d70d521d6b7418, type: 2}
-  - {fileID: 9100000, guid: 66bba5a11d3e6c84480c5ae52d4e7b03, type: 2}
-  - {fileID: 9100000, guid: 38037bf728d8a524d8aaff582da16a71, type: 2}
+  - {fileID: 9100000, guid: bb7f51ae39be71249a719d2bfc441d0b, type: 2}
+  - {fileID: 9100000, guid: ac733a611aa013f45b545b92c8ee6f9d, type: 2}
+  - {fileID: 9100000, guid: 412e5c1dd301f694d8717625b92bfe85, type: 2}
+  - {fileID: 9100000, guid: 4a80eb7aadce70d48a520d607ee50499, type: 2}
+  - {fileID: 9100000, guid: 294d7aba97384d541ab61d51bec669cb, type: 2}
   - {fileID: 9100000, guid: cf927c7c053d4024b83c5a5948d83719, type: 2}
 --- !u!1 &67528059
 GameObject:
@@ -513,7 +516,7 @@ GameObject:
   - component: {fileID: 205094370}
   - component: {fileID: 205094369}
   - component: {fileID: 205094368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +709,7 @@ GameObject:
   - component: {fileID: 350941704}
   - component: {fileID: 350941703}
   - component: {fileID: 350941702}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Banheira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3597,7 +3600,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98a95ebb58fe8b3428a7b3cc3412f51f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a66e73c171775b7468145ea20d6d3ce0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3613,8 +3616,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897982172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.39, z: 0.91}
-  m_LocalScale: {x: 1.9793719, y: 2.0936048, z: 0.88064003}
+  m_LocalPosition: {x: 0.04, y: 0.42, z: 0.13}
+  m_LocalScale: {x: 2.0009754, y: 2.102314, z: 0.88430345}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -3635,7 +3638,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3678,7 +3681,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3703,7 +3706,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3728,7 +3731,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3753,7 +3756,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3778,7 +3781,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3803,7 +3806,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3828,7 +3831,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3853,7 +3856,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3878,7 +3881,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3903,7 +3906,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3928,7 +3931,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3953,7 +3956,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3978,7 +3981,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4003,7 +4006,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4028,7 +4031,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.02, y: 8.1}
+    oldSize: {x: 12.8, y: 7.96}
     newSize: {x: 3.5, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4179,6 +4182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light_timer: 0
+  atual_player_lighted: 0
   player_was_dead: 0
 --- !u!4 &1927029326
 Transform:

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightsTest : MonoBehaviour {
 
     public Light illumination;
-    bool isOn = false;
+   // bool isOn = false;
     public int id;
 
 	// Use this for initialization
