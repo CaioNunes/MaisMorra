@@ -55,7 +55,7 @@ public class ChoosedPlayer : MonoBehaviour {
         {
             isOnGame = true;
             selectSprite = controller.PersonagensOnGame[indicePersonagens];
-            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;
+            gameObject.GetComponent<SpriteRenderer>().sprite = selectSprite;            
         }
          
     }

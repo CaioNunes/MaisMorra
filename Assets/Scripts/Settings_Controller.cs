@@ -7,24 +7,23 @@ using UnityEngine.EventSystems;
 
 public class Settings_Controller : MonoBehaviour {
 
-    public Toggle fullScreenToggle;
-    public Toggle muteItAllToggle;
+    public Toggle fullScreenToggle;    
     public Slider musicSlider; 
     public AudioSource[] musicSource;
-
-    public GameSettings gameSettings;
+    
     public GameObject panelMenuOptions;
     public GameObject buttonsMenu;
+    private GameSettings gameSettings;
 
     public string abrirOptions;    
-    public bool optionsIsOpen = false;
+    private bool optionsIsOpen = false;
 
-    public GameObject lastSelectedGameObject;
-
-    private Sprite unSlectScrennButton;
-    private Sprite unSlectMusicButton;
+    private GameObject lastSelectedGameObject;
+    
     public GameObject screenButton;
     public GameObject musicButton;
+    private Sprite unSlectScrennButton;
+    private Sprite unSlectMusicButton;
 
     private void Awake()
     {
@@ -33,14 +32,11 @@ public class Settings_Controller : MonoBehaviour {
 
     private void Start()
     {
-        Screen.fullScreen = fullScreenToggle.isOn = gameSettings.fullScreen;
-        muteItAllToggle.isOn = gameSettings.muteItAll;
+        Screen.fullScreen = fullScreenToggle.isOn = gameSettings.fullScreen;        
         musicSlider.value = gameSettings.musicVolume;
 
         unSlectScrennButton = screenButton.GetComponent<Image>().sprite;
         unSlectMusicButton = musicButton.GetComponent<Image>().sprite;
-
-        OnMuteItAll();
 
         panelMenuOptions.SetActive(false);
         
@@ -54,37 +50,34 @@ public class Settings_Controller : MonoBehaviour {
     void Update() {              
             
         musicSource = FindObjectsOfType<AudioSource>();
-        OnMuteItAll();
-
 
         if (Input.GetButtonDown(abrirOptions))
-            {
+        {
             AbrirMenuOptions();
-            }
+        }
 
-            if (optionsIsOpen)
-            {  
-                fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
-                musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
-                muteItAllToggle.onValueChanged.AddListener(delegate { OnMuteItAll(); });                
+        if (optionsIsOpen)
+        {
+            fullScreenToggle.onValueChanged.AddListener(delegate { OnFullscreen(); });
+            musicSlider.onValueChanged.AddListener(delegate { OnMusic(); });
 
-                if (EventSystem.current.currentSelectedGameObject.Equals(fullScreenToggle.gameObject))
-                {
-                    screenButton.GetComponent<Image>().sprite = screenButton.GetComponent<Selectable>().spriteState.highlightedSprite;
-                }
-                else
-                {
-                    screenButton.GetComponent<Image>().sprite = unSlectScrennButton;
-                }
-                if (EventSystem.current.currentSelectedGameObject.Equals(musicSlider.gameObject))
-                {
-                    musicButton.GetComponent<Image>().sprite = musicButton.GetComponent<Selectable>().spriteState.highlightedSprite;
-                }
-                else
-                {
-                    musicButton.GetComponent<Image>().sprite = unSlectMusicButton;
-                }
+            if (EventSystem.current.currentSelectedGameObject.Equals(fullScreenToggle.gameObject))
+            {
+                screenButton.GetComponent<Image>().sprite = screenButton.GetComponent<Selectable>().spriteState.highlightedSprite;
             }
+            else
+            {
+                screenButton.GetComponent<Image>().sprite = unSlectScrennButton;
+            }
+            if (EventSystem.current.currentSelectedGameObject.Equals(musicSlider.gameObject))
+            {
+                musicButton.GetComponent<Image>().sprite = musicButton.GetComponent<Selectable>().spriteState.highlightedSprite;
+            }
+            else
+            {
+                musicButton.GetComponent<Image>().sprite = unSlectMusicButton;
+            }
+        }
     }
      
     public void AbrirMenuOptions(){
@@ -100,8 +93,6 @@ public class Settings_Controller : MonoBehaviour {
 
             EventSystem.current.SetSelectedGameObject(lastSelectedGameObject);
         }
-
-
         else
         {
             lastSelectedGameObject = EventSystem.current.currentSelectedGameObject;
@@ -114,49 +105,18 @@ public class Settings_Controller : MonoBehaviour {
             
             panelMenuOptions.SetActive(true);
             optionsIsOpen = true;                       
-        }
-
-       
+        }       
     }
 
     public void OnFullscreen(){
         //Screen.fullScreen = FindObjectOfType<GameSettings>().fullScreen = fullScreenToggle.isOn;
         Screen.fullScreen = gameSettings.fullScreen = fullScreenToggle.isOn;
-    }
-
-    public void OnMuteItAll(){
-               
-            for (int i = 0; i < musicSource.Length; i++)
-            {
-                if (gameSettings.muteItAll)
-                {
-                 musicSource[i].volume = 0 ;
-                }
-                else
-                {                
-                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
-                }
-                
-            }
-        gameSettings.muteItAll = muteItAllToggle.isOn;
-    }
-
+    }   
     
     public void OnMusic(){
-        if (muteItAllToggle.isOn == false)
+        for (int i = 0; i < musicSource.Length; i++)
         {
-            for (int i = 0; i < musicSource.Length; i++)
-            {
-                musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
-            }
+            musicSource[i].volume = gameSettings.musicVolume = musicSlider.value;
         }
-        else
-        {
-            gameSettings.musicVolume = musicSlider.value;
-        }
-        
-    }
-           
-    
-    
+    }     
 }

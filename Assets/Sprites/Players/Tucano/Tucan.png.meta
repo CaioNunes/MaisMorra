@@ -1,28 +1,28 @@
 fileFormatVersion: 2
 guid: 0d16fc68495d0a94f8720594b798b540
-timeCreated: 1505249413
+timeCreated: 1505296279
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NEWidddleTucan
-    21300002: NEWidddleTucan2
-    21300004: NEWidddleTucan3
-    21300006: NEWrunTucan
-    21300008: NEWrunTucan2
-    21300010: NEWrunTucan3
-    21300012: NEWrunTucan4
-    21300014: NEWrunTucan5
-    21300016: NEWrunTucan6
-    21300018: NEWjumpTucan
-    21300020: NEWjumpTucan2
-    21300022: NEWjumpTucan3
-    21300024: NEWjumpTucan4
-    21300026: NEWatkTucan
-    21300028: NEWatkTucan2
-    21300030: NEWatkTucan3
-    21300032: NEWatkTucan4
-    21300034: NEWatkTucan5
-    21300036: NEWatkTucan6
+    21300000: Iddle_Tucan
+    21300002: Iddle_Tucan_2
+    21300004: Iddle_Tucan_3
+    21300006: Run_Tucan
+    21300008: Run_Tucan_2
+    21300010: Run_Tucan_3
+    21300012: Run_Tucan_4
+    21300014: Run_Tucan_5
+    21300016: Run_Tucan_6
+    21300018: Jump_Tucan
+    21300020: Jump_Tucan_2
+    21300022: Jump_Tucan_3
+    21300024: Jump_Tucan_4
+    21300026: Atk_Tucan
+    21300028: Atk_Tucan_2
+    21300030: Atk_Tucan_3
+    21300032: Atk_Tucan_4
+    21300034: Atk_Tucan_5
+    21300036: Atk_Tucan_6
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -31,8 +31,6 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
-    mipMapsPreserveCoverage: 0
-    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -48,13 +46,10 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    serializedVersion: 2
     filterMode: 0
     aniso: -1
     mipBias: -1
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -118,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NEWidddleTucan
+      name: Iddle_Tucan
       rect:
         serializedVersion: 2
         x: 0
@@ -126,13 +121,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWidddleTucan2
+      name: Iddle_Tucan_2
       rect:
         serializedVersion: 2
         x: 120
@@ -140,13 +134,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWidddleTucan3
+      name: Iddle_Tucan_3
       rect:
         serializedVersion: 2
         x: 240
@@ -154,13 +147,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan
+      name: Run_Tucan
       rect:
         serializedVersion: 2
         x: 0
@@ -168,13 +160,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan2
+      name: Run_Tucan_2
       rect:
         serializedVersion: 2
         x: 120
@@ -182,13 +173,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan3
+      name: Run_Tucan_3
       rect:
         serializedVersion: 2
         x: 240
@@ -196,13 +186,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan4
+      name: Run_Tucan_4
       rect:
         serializedVersion: 2
         x: 0
@@ -210,13 +199,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan5
+      name: Run_Tucan_5
       rect:
         serializedVersion: 2
         x: 123
@@ -224,13 +212,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWrunTucan6
+      name: Run_Tucan_6
       rect:
         serializedVersion: 2
         x: 240
@@ -238,13 +225,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWjumpTucan
+      name: Jump_Tucan
       rect:
         serializedVersion: 2
         x: 0
@@ -252,13 +238,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWjumpTucan2
+      name: Jump_Tucan_2
       rect:
         serializedVersion: 2
         x: 120
@@ -266,13 +251,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWjumpTucan3
+      name: Jump_Tucan_3
       rect:
         serializedVersion: 2
         x: 240
@@ -280,13 +264,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWjumpTucan4
+      name: Jump_Tucan_4
       rect:
         serializedVersion: 2
         x: 0
@@ -294,13 +277,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan
+      name: Atk_Tucan
       rect:
         serializedVersion: 2
         x: 0
@@ -308,13 +290,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan2
+      name: Atk_Tucan_2
       rect:
         serializedVersion: 2
         x: 120
@@ -322,13 +303,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan3
+      name: Atk_Tucan_3
       rect:
         serializedVersion: 2
         x: 240
@@ -336,13 +316,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan4
+      name: Atk_Tucan_4
       rect:
         serializedVersion: 2
         x: 0
@@ -350,13 +329,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan5
+      name: Atk_Tucan_5
       rect:
         serializedVersion: 2
         x: 120
@@ -364,13 +342,12 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: NEWatkTucan6
+      name: Atk_Tucan_6
       rect:
         serializedVersion: 2
         x: 240
@@ -378,13 +355,11 @@ TextureImporter:
         width: 120
         height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
       tessellationDetail: 0
     outline: []
-    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 114740839607288634}
   - component: {fileID: 50640985382036312}
   - component: {fileID: 61218273007067148}
-  - component: {fileID: 114917739539028366}
   - component: {fileID: 95973529898453242}
   - component: {fileID: 61594163403833404}
   - component: {fileID: 114359926336177496}
@@ -242,23 +241,6 @@ MonoBehaviour:
   horizontalCtrl: Horizontal_P3
   jump: Jump_P3
   dash: Dash_P3
---- !u!114 &114917739539028366
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630932884619452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d732a738ce38d43b29391978fa3417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  punch: Punch_P3
-  attackForce: 500
-  canAttack: 1
-  maxSpeed: 5
-  anim: {fileID: 95973529898453242}
-  dashForce: 0
 --- !u!114 &114962647612074950
 MonoBehaviour:
   m_ObjectHideFlags: 1

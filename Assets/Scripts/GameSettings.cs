@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 
 public class GameSettings : MonoBehaviour
 {
-    public bool fullScreen;
-    public bool muteItAll = false;
+    public bool fullScreen;    
     public float musicVolume = 1f;
     public AudioClip soundSelect;    
 
