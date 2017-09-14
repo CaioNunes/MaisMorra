@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovePlayer : MonoBehaviour {
 	// Floats
@@ -29,6 +30,8 @@ public class MovePlayer : MonoBehaviour {
 	public string horizontalCtrl;
 	public string jump ;
 	public string dash ;
+
+    private float contPassos = 1f;
 
 	void Start () {
 		rd2 = GetComponent<Rigidbody2D> ();	
@@ -62,12 +65,28 @@ public class MovePlayer : MonoBehaviour {
 			Flip ();
 		}
 
-		if (moveHorizontal > 0) {
-			transform.Translate(maxSpeed * Time.deltaTime, 0, 0);
+        if (moveHorizontal > 0) {
+            if (contPassos >= 0.2f)
+            {
+                AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
+                contPassos = 0f;
+            }
+            else {
+                contPassos += Time.deltaTime;
+            }
+            transform.Translate(maxSpeed * Time.deltaTime, 0, 0);
 		}
 
 		if (moveHorizontal < 0) {
-			transform.Translate (-maxSpeed * Time.deltaTime, 0, 0);
+            if (contPassos >= 0.2f)
+            {
+                AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
+                contPassos = 0f;
+            }
+            else {
+                contPassos += Time.deltaTime;
+            }
+            transform.Translate (-maxSpeed * Time.deltaTime, 0, 0);
 		}
 			
 	}

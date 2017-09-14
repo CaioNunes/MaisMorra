@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c544160921adb4bb4a0906a11c4b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDuration: 1
+  attackDuration: 0.5
   attackCD: 1
   punch: Punch_P3
 --- !u!114 &114753667292865406
@@ -376,6 +376,8 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: d78397af000eb5d439cf4b94e8a1190c, type: 3}
   doubleJump: {fileID: 8300000, guid: c8b27164f07862245876e712457f0a71, type: 3}
   NaoPodePular: {fileID: 8300000, guid: 7ea0fc3ed0d6254418fb8797169b0e51, type: 3}
+  attack: {fileID: 8300000, guid: 5a26ff9449798be4388afbc70acc8034, type: 3}
+  passos: {fileID: 8300000, guid: d37e11c375491b640b7e5f5193dd2001, type: 3}
 --- !u!212 &212088819147373362
 SpriteRenderer:
   m_ObjectHideFlags: 1

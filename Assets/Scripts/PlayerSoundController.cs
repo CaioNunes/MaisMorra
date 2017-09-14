@@ -12,6 +12,8 @@ public class PlayerSoundController : MonoBehaviour {
 	public AudioClip jump;
 	public AudioClip doubleJump;
 	public AudioClip NaoPodePular;
+    public AudioClip attack;
+    public AudioClip passos;
 
 	public void playJumpSound(){
 		AudioSource.PlayClipAtPoint(jump, transform.position);

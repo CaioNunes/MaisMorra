@@ -32,7 +32,7 @@ public class ChoosedPlayer : MonoBehaviour {
             TrocaPersonagem();            
         }
 
-        if (Input.GetButtonDown(deselect))
+        if (Input.GetButtonDown(deselect) && SceneManager.GetActiveScene().name.Equals("PlayerSelection") )
         {
             if (isOnGame)
             {

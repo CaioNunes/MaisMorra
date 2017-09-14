@@ -35,6 +35,7 @@ public class PlayerAttack : MonoBehaviour {
         
         if (Input.GetButtonDown(punch) && timmerAttack <= 0)
         {
+            AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().attack, transform.position);
             anim.Play("punch");
             attacking = true;            
             timmerAttack = attackCD;
