@@ -28,13 +28,13 @@ EditorBuildSettings:
     guid: 6e3fe91cda0f6914db2712c16f6733e6
   - enabled: 1
     path: Assets/Scenes/Win2.unity
-    guid: fbc1f0abc903dde4faca585ba27df16d
+    guid: 2e6a1a6ee152d574b8a6c10d9929d03a
   - enabled: 1
     path: Assets/Scenes/Win3.unity
-    guid: 8af2d9f50f8a59840a4a33e84a6ad4c4
+    guid: fab6c44ace7ba2b4e882ce04185e9ff9
   - enabled: 1
     path: Assets/Scenes/Win4.unity
-    guid: 00d991f07bb37244caf6f236b1eb5cc1
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/teste.unity
     guid: fe79dcce0ceb0724587475c70d15a9a5

@@ -54,15 +54,30 @@ public class LightController : MonoBehaviour {
         if (light_timer >= 3f) {
             light_timer = 0;
 
-            players[atual_player_lighted].illumination.enabled = false;
-
-            atual_player_lighted++;
-            if (atual_player_lighted + 1 > inGame.Count)
+            if (players[atual_player_lighted] != null)
             {
-                atual_player_lighted = 0;
+                players[atual_player_lighted].illumination.enabled = false;
+
+                atual_player_lighted++;
+                if (atual_player_lighted + 1 > inGame.Count)
+                {
+                    atual_player_lighted = 0;
+                }
+
+                players[atual_player_lighted].illumination.enabled = true;
+            }
+            else {
+                atual_player_lighted++;
+                if (atual_player_lighted + 1 > inGame.Count)
+                {
+                    atual_player_lighted = 0;
+                }
+
+                players[atual_player_lighted].illumination.enabled = true;
+                recalibrateLights();
+
             }
 
-            players[atual_player_lighted].illumination.enabled = true;
         }
 
 	}

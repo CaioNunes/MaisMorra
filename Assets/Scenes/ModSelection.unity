@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da58f5d6277853a4da99758298328d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Esse modo quem morrer menos ganha mas ta tudo escuro
+  description: 'A luz acabou, seja o sobrevivente final eliminando seus inimigos! '
   title: {fileID: 21300000, guid: 68c88cc5520fa0d468fcd3d8fd32eec0, type: 3}
   image: {fileID: 0}
   status: 1
@@ -696,7 +696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da58f5d6277853a4da99758298328d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Esse modo quem morrer menos ganha
+  description: "Nem caia nem bata a cabe\xE7a no teto! Desvie das balas e sobreviva!
+    Quem acabar o jogo com menos mortes vence!"
   title: {fileID: 21300000, guid: cbc77f662f42f9245a3c73f0ea7b9633, type: 3}
   image: {fileID: 0}
   status: 1

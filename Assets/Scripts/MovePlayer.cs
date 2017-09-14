@@ -66,28 +66,37 @@ public class MovePlayer : MonoBehaviour {
 		}
 
         if (moveHorizontal > 0) {
-            if (contPassos >= 0.2f)
-            {
-                AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
-                contPassos = 0f;
-            }
-            else {
-                contPassos += Time.deltaTime;
-            }
             transform.Translate(maxSpeed * Time.deltaTime, 0, 0);
+            if (SceneManager.GetActiveScene().name == "BlackOutMod") {
+                if (contPassos >= 0.2f)
+                {
+                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
+                    contPassos = 0f;
+                }
+                else
+                {
+                    contPassos += Time.deltaTime;
+                }
+            }
+       
 		}
 
 		if (moveHorizontal < 0) {
-            if (contPassos >= 0.2f)
+            transform.Translate(-maxSpeed * Time.deltaTime, 0, 0);
+
+            if (SceneManager.GetActiveScene().name == "BlackOutMod")
             {
-                AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
-                contPassos = 0f;
+                if (contPassos >= 0.2f)
+                {
+                    AudioSource.PlayClipAtPoint(gameObject.GetComponent<PlayerSoundController>().passos, transform.position);
+                    contPassos = 0f;
+                }
+                else
+                {
+                    contPassos += Time.deltaTime;
+                }
             }
-            else {
-                contPassos += Time.deltaTime;
-            }
-            transform.Translate (-maxSpeed * Time.deltaTime, 0, 0);
-		}
+        }
 			
 	}
 

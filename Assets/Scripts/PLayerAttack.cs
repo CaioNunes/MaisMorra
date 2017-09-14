@@ -95,6 +95,6 @@ public class PlayerAttack : MonoBehaviour {
         LightController p = FindObjectOfType<LightController>();
         p.player_was_dead = true;
         gameObject.GetComponent<MovePlayer>().isAlive = false;
-        Destroy(gameObject);        
+        //Destroy(gameObject);        
     }
 }

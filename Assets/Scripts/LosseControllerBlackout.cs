@@ -7,16 +7,20 @@ public class LosseControllerBlackout : MonoBehaviour {
 
     // Use this for initialization
 
-    public MovePlayer[] players;  
+    public List<MovePlayer> players = new List<MovePlayer>();  
 
     void Start () {
-        
+        players.Clear();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        players = FindObjectsOfType<MovePlayer>();
-        if (players.Length == 1){            
+        players.Clear();
+        foreach (MovePlayer playerInGame in FindObjectsOfType<MovePlayer>())
+        {
+           players.Add(playerInGame);
+        }
+        if (players.Count == 1){            
             SceneManager.LoadScene("Win" + players[0].id);
         }        
           

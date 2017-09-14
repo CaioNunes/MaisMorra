@@ -211,6 +211,8 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: d78397af000eb5d439cf4b94e8a1190c, type: 3}
   doubleJump: {fileID: 8300000, guid: c8b27164f07862245876e712457f0a71, type: 3}
   NaoPodePular: {fileID: 8300000, guid: 7ea0fc3ed0d6254418fb8797169b0e51, type: 3}
+  attack: {fileID: 0}
+  passos: {fileID: 0}
 --- !u!114 &114740839607288634
 MonoBehaviour:
   m_ObjectHideFlags: 1
