@@ -7,7 +7,7 @@ public class MenuMusicController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (SceneManager.GetActiveScene().name == "PressStart")
+        if (SceneManager.GetActiveScene().name == "Start")
         {
             DontDestroyOnLoad(this.gameObject);
         }
@@ -15,11 +15,12 @@ public class MenuMusicController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
 
-        if (SceneManager.GetActiveScene().name != "Start" && SceneManager.GetActiveScene().name != "PlayerSelection" && SceneManager.GetActiveScene().name != "ModSelection" && SceneManager.GetActiveScene().name != "PressStart")
+
+        if (SceneManager.GetActiveScene().name != "Start" && SceneManager.GetActiveScene().name != "PlayerSelection" &&  SceneManager.GetActiveScene().name != "ModSelection" && SceneManager.GetActiveScene().name != "PressStart")
         {
             Destroy(this.gameObject);
         }
+   
 	}
 }
